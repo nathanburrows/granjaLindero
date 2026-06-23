@@ -77,7 +77,7 @@ export default function Experiences() {
                 <h3 className="font-serif text-white text-xl font-bold mb-2">
                   {item.title}
                 </h3>
-                <p className="text-stone-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 mb-4">
+                <p className="text-stone-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 mb-4 line-clamp-3">
                   {item.description}
                 </p>
                 {/* Book button — visible on hover */}
