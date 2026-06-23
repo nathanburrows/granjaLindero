@@ -23,7 +23,7 @@ export const t = {
     },
     about: {
       label: "Quiénes somos",
-      title: "Bienvenidos a Granja Ecológica Lindero",
+      title: "Bienvenidos a La Granja Ecológica Lindero",
       body: "Somos un espacio donde la naturaleza, la agricultura ecológica y el bienestar se encuentran. Ubicados en Tomaykichwa, Huánuco, te invitamos a desconectarte del ruido de la ciudad y reconectarte con la tierra, los animales y tú mismo. Ofrecemos experiencias auténticas para familias, grupos y empresas.",
       missionLabel: "Misión",
       mission: "Somos un negocio social que busca la sostenibilidad financiera de los proyectos de Paz y Esperanza, mediante la venta de nuestros productos naturales y servicios. Cultivamos un espacio para apoyar al proceso de restauración para NNA que son sobrevivientes de violencia sexual.",
@@ -266,7 +266,7 @@ export const t = {
       tag: "Grupos y Eventos",
       title: "El espacio perfecto para tu grupo",
       subtitle:
-        "Iglesias, colegios, empresas y familias encuentran en Granja Lindero el lugar ideal para retiros, paseos y eventos al aire libre.",
+        "Iglesias, colegios, empresas y familias encuentran en La Granja Lindero el lugar ideal para retiros, paseos y eventos al aire libre.",
       ctaWhatsapp: "Consultar disponibilidad",
       formTitle: "Consultar disponibilidad",
       formSubtitle: "Escríbenos y coordinamos los detalles.",
@@ -366,7 +366,7 @@ export const t = {
     },
     about: {
       label: "Who we are",
-      title: "Welcome to Granja Ecológica Lindero",
+      title: "Welcome to La Granja Ecológica Lindero",
       body: "We are a space where nature, ecological farming, and well-being come together. Located in Tomaykichwa, Huánuco, we invite you to disconnect from the noise of the city and reconnect with the earth, the animals, and yourself. We offer authentic experiences for families, groups, and businesses.",
       missionLabel: "Mission",
       mission: "We are a social enterprise that seeks the financial sustainability of the Paz y Esperanza projects through the sale of our natural products and services. We cultivate a space to support the restoration process for children and adolescents who are survivors of sexual violence.",
@@ -609,7 +609,7 @@ export const t = {
       tag: "Groups & Events",
       title: "The perfect space for your group",
       subtitle:
-        "Churches, schools, companies, and families find in Granja Lindero the ideal place for retreats, outings, and open-air events.",
+        "Churches, schools, companies, and families find in La Granja Lindero the ideal place for retreats, outings, and open-air events.",
       ctaWhatsapp: "Check availability",
       formTitle: "Check availability",
       formSubtitle: "Message us and we'll coordinate the details.",

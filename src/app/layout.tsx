@@ -16,9 +16,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Granja Ecológica Lindero | Tomaykichwa, Huánuco, Perú",
+  title: "La Granja Ecológica Lindero | Tomaykichwa, Huánuco, Perú",
   description:
-    "Vive una experiencia única en la Granja Ecológica Lindero. Hospedaje campestre, restaurante, granja interactiva, talleres de horticultura terapéutica y más en Tomaykichwa, Huánuco, Perú.",
+    "Vive una experiencia única en la La Granja Ecológica Lindero. Hospedaje campestre, restaurante, granja interactiva, talleres de horticultura terapéutica y más en Tomaykichwa, Huánuco, Perú.",
   keywords: [
     "granja ecológica",
     "Huánuco",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "tour vivencial",
   ],
   openGraph: {
-    title: "Granja Ecológica Lindero",
+    title: "La Granja Ecológica Lindero",
     description: "Reconecta con la naturaleza en Tomaykichwa, Huánuco, Perú.",
   },
 };

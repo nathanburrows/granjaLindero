@@ -22,7 +22,7 @@ function MissionModal({ onClose, tx }: { onClose: () => void; tx: AboutTx }) {
         {/* Header */}
         <div className="flex items-center justify-between px-7 pt-7 pb-5 border-b border-stone-100">
           <div>
-            <h3 className="font-serif text-stone-900 text-2xl font-bold">Granja Ecológica Lindero</h3>
+            <h3 className="font-serif text-stone-900 text-2xl font-bold">La Granja Ecológica Lindero</h3>
             <p className="text-stone-400 text-sm mt-0.5">{tx.missionLabel} & {tx.visionLabel}</p>
           </div>
           <button

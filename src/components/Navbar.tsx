@@ -63,7 +63,7 @@ export default function Navbar() {
         <a href="#" className="flex items-center group">
           <Image
             src="/images/logo.jpg"
-            alt="Granja Ecológica Lindero"
+            alt="La Granja Ecológica Lindero"
             width={56}
             height={56}
             className="rounded-full object-cover"

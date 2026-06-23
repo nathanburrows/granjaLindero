@@ -18,14 +18,14 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <Image
                 src="/images/logo.jpg"
-                alt="Granja Ecológica Lindero"
+                alt="La Granja Ecológica Lindero"
                 width={56}
                 height={56}
                 className="rounded-full object-cover"
               />
               <div>
                 <div className="text-white font-serif font-bold text-lg leading-none">
-                  Granja Lindero
+                  La Granja Lindero
                 </div>
                 <div className="text-green-500 text-[10px] uppercase tracking-[0.2em]">
                   Ecológica
@@ -96,7 +96,7 @@ export default function Footer() {
         </div>
 
         <div className="text-center text-xs text-stone-600">
-          © {new Date().getFullYear()} Granja Ecológica Lindero · {tx.rights}
+          © {new Date().getFullYear()} La Granja Ecológica Lindero · {tx.rights}
         </div>
       </div>
     </footer>

@@ -229,7 +229,7 @@ export default function Accommodation() {
                 <h3 className="font-serif text-stone-900 text-2xl font-bold">
                   {tx.buildings.find((b) => b.id === selectedBuildingId)?.name}
                 </h3>
-                <p className="text-stone-500 text-sm mt-0.5">Granja Ecológica Lindero · Huánuco, Perú</p>
+                <p className="text-stone-500 text-sm mt-0.5">La Granja Ecológica Lindero · Huánuco, Perú</p>
               </div>
               <button
                 onClick={() => setSelectedBuildingId(null)}
