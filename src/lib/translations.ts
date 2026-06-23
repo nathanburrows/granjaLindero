@@ -48,21 +48,21 @@ export const t = {
           title: "Tour Vivencial",
           subtitle: "Animal Friends",
           description:
-            "Descubre la vida del campo en Tomaykichwa con nuestro Tour Animal Friends. Interactúa con los animales de la granja y aprende sobre el ecosistema rural.",
+            "Conoce de cerca los animales de la granja, interactúa con ellos y disfruta de una degustación de nuestros productos lácteos frescos. Una experiencia inolvidable para toda la familia.",
         },
         {
           id: "horticultura",
-          title: "Horticultura Terapéutica",
-          subtitle: "Talleres de bienestar",
+          title: "Taller Conexión Verde",
+          subtitle: "Horticultura Terapéutica",
           description:
-            "Mascarillas naturales, kokedamas, suculentas, pigmentos naturales, estampado botánico y más. S/.50 por persona · Grupos de 7 a 15.",
+            "Reconecta con la naturaleza a través de la horticultura terapéutica. Taller de 1:30 a 2 horas con mascarillas naturales, kokedamas, suculentas, pigmentos naturales y más. S/.50 por persona.",
         },
         {
           id: "educativo",
-          title: "Recorridos Educativos",
-          subtitle: "Aprende en la naturaleza",
+          title: "Circuito Ecológico",
+          subtitle: "Recorrido por la granja",
           description:
-            "Recorridos diseñados para colegios, familias y empresas. Aprende sobre agroecología, ganadería ecológica y vida sostenible.",
+            "Recorre los senderos ecológicos de la granja, aprende sobre agroecología y vida sostenible. Al finalizar, llévate una plantita de recuerdo a casa.",
         },
         {
           id: "privado",
@@ -76,7 +76,7 @@ export const t = {
           title: "Noche de Fogón",
           subtitle: "Bajo las estrellas",
           description:
-            "Reúnete alrededor del fuego, asa alimentos al palo y comparte historias bajo el cielo andino. Una experiencia nocturna única para grupos y familias.",
+            "Reúnete alrededor del fuego, asa alimentos al palo y comparte historias bajo el cielo andino. Una experiencia nocturna única incluida en los paquetes de hospedaje.",
         },
       ],
     },
@@ -387,21 +387,21 @@ export const t = {
           title: "Experiential Tour",
           subtitle: "Animal Friends",
           description:
-            "Discover rural life in Tomaykichwa with our Animal Friends Tour. Interact with farm animals and learn about the rural ecosystem.",
+            "Meet and interact with the farm animals up close, then enjoy a tasting of our fresh dairy products. An unforgettable experience for the whole family.",
         },
         {
           id: "horticultura",
-          title: "Therapeutic Horticulture",
-          subtitle: "Wellness workshops",
+          title: "Conexión Verde Workshop",
+          subtitle: "Therapeutic Horticulture",
           description:
-            "Natural face masks, kokedamas, succulents, natural pigments, botanical stamping and more. S/.50 per person · Groups of 7 to 15.",
+            "Reconnect with nature through therapeutic horticulture. A 1.5–2 hour workshop including natural face masks, kokedamas, succulents, natural pigments, and more. S/.50 per person.",
         },
         {
           id: "educativo",
-          title: "Educational Tours",
-          subtitle: "Learn in nature",
+          title: "Ecological Circuit",
+          subtitle: "Farm trail tour",
           description:
-            "Tours designed for schools, families, and companies. Learn about agroecology, ecological livestock farming, and sustainable living.",
+            "Walk the ecological trails of the farm, learn about agroecology and sustainable living. At the end, take home a seedling as a souvenir.",
         },
         {
           id: "privado",
@@ -415,7 +415,7 @@ export const t = {
           title: "Campfire Night",
           subtitle: "Under the stars",
           description:
-            "Gather around the fire, roast food on sticks, and share stories under the Andean sky. A unique evening experience for groups and families.",
+            "Gather around the fire, roast food on sticks, and share stories under the Andean sky. A unique evening experience included in our lodging packages.",
         },
       ],
     },
