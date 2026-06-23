@@ -1,9 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { useLang } from "@/lib/LangContext";
 import { t } from "@/lib/translations";
 import { waUrl } from "@/lib/contact";
+
+type PkgItem = (typeof t)["es"]["packages"]["items"][number];
 
 function WhatsAppIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
@@ -37,9 +40,153 @@ const packageVisuals: Record<string, { src: string; label: string }[]> = {
   ],
 };
 
+function BookingModal({
+  pkg,
+  visuals,
+  tx,
+  lang,
+  onClose,
+}: {
+  pkg: PkgItem;
+  visuals: { src: string; label: string }[];
+  tx: (typeof t)["es"]["packages"];
+  lang: "es" | "en";
+  onClose: () => void;
+}) {
+  const [date, setDate] = useState("");
+  const [people, setPeople] = useState(pkg.minPeople ?? 2);
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [onClose]);
+
+  const message =
+    lang === "es"
+      ? [
+          `Hola, me interesa reservar el Paquete ${pkg.name} (${pkg.price}/persona).`,
+          date ? `Fecha de llegada: ${date}` : "",
+          `Número de personas: ${people}`,
+          "¿Pueden confirmar disponibilidad?",
+        ].filter(Boolean).join("\n")
+      : [
+          `Hi, I'd like to book the ${pkg.name} Package (${pkg.price}/person).`,
+          date ? `Arrival date: ${date}` : "",
+          `Number of people: ${people}`,
+          "Can you confirm availability?",
+        ].filter(Boolean).join("\n");
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/80 backdrop-blur-sm"
+      onClick={(e) => e.target === e.currentTarget && onClose()}
+    >
+      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden">
+        {/* Photo strip header */}
+        {visuals.length > 0 && (
+          <div className="flex h-36 overflow-hidden">
+            {visuals.map((v, i) => (
+              <div key={i} className="relative flex-1 overflow-hidden">
+                <Image src={v.src} alt={v.label} fill className="object-cover" sizes="200px" />
+                {i < visuals.length - 1 && (
+                  <div className="absolute top-0 right-0 bottom-0 w-px bg-white/40" />
+                )}
+              </div>
+            ))}
+            <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-transparent to-black/40 pointer-events-none" />
+          </div>
+        )}
+
+        {/* Header */}
+        <div className="flex items-center justify-between px-7 pt-6 pb-4 border-b border-stone-100">
+          <div>
+            <h3 className="font-serif text-stone-900 text-2xl font-bold">{pkg.name}</h3>
+            <p className="text-stone-400 text-sm mt-0.5">
+              {pkg.price} / {tx.perPerson}
+              {pkg.minPeople > 1 && ` · ${tx.minPeople.replace("{n}", String(pkg.minPeople))}`}
+            </p>
+          </div>
+          <button
+            onClick={onClose}
+            className="w-9 h-9 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center transition-colors flex-shrink-0"
+          >
+            <svg className="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Form */}
+        <div className="px-7 py-5 space-y-5">
+          {/* Date */}
+          <div className="bg-stone-50 rounded-2xl p-4 space-y-4">
+            <div>
+              <label className="block text-xs font-semibold text-stone-500 uppercase tracking-wider mb-1.5">
+                {tx.formDate}
+              </label>
+              <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                min={new Date().toISOString().split("T")[0]}
+                className="w-full border border-stone-200 rounded-xl px-4 py-2.5 text-sm text-stone-800 bg-white focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+            </div>
+
+            {/* People */}
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-stone-600">{tx.formPeople}</span>
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => setPeople((p) => Math.max(pkg.minPeople ?? 1, p - 1))}
+                  disabled={people <= (pkg.minPeople ?? 1)}
+                  className="w-9 h-9 rounded-full border border-stone-300 flex items-center justify-center text-stone-600 hover:bg-stone-100 transition-colors disabled:opacity-40"
+                >
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+                  </svg>
+                </button>
+                <span className="w-6 text-center font-semibold text-stone-800">{people}</span>
+                <button
+                  type="button"
+                  onClick={() => setPeople((p) => Math.min(200, p + 1))}
+                  className="w-9 h-9 rounded-full border border-stone-300 flex items-center justify-center text-stone-600 hover:bg-stone-100 transition-colors"
+                >
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-stone-400 text-sm">{tx.formSubtitle}</p>
+
+          <a
+            href={waUrl(message)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-500 text-white font-semibold py-3.5 rounded-full transition-colors"
+            onClick={onClose}
+          >
+            <WhatsAppIcon />
+            {tx.formSend}
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Packages() {
   const { lang } = useLang();
   const tx = t[lang].packages;
+  const [selected, setSelected] = useState<number | null>(null);
+
+  const selectedPkg = selected !== null ? tx.items[selected] : null;
+  const selectedVisuals = selected !== null ? (packageVisuals[tx.items[selected].id] ?? []) : [];
 
   return (
     <section id="paquetes" className="py-24 md:py-32 bg-stone-50">
@@ -57,7 +204,7 @@ export default function Packages() {
 
         {/* Cards */}
         <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
-          {tx.items.map((pkg) => {
+          {tx.items.map((pkg, i) => {
             const visuals = packageVisuals[pkg.id] ?? [];
             return (
               <div
@@ -75,27 +222,14 @@ export default function Packages() {
                 {/* Photo strip */}
                 {visuals.length > 0 && (
                   <div className="flex h-28 overflow-hidden">
-                    {visuals.map((v, i) => (
+                    {visuals.map((v, vi) => (
                       <div
-                        key={i}
+                        key={vi}
                         className="relative flex-1 overflow-hidden"
                         style={{ flexBasis: `${100 / visuals.length}%` }}
                       >
-                        <Image
-                          src={v.src}
-                          alt={v.label}
-                          fill
-                          className="object-cover"
-                          sizes="200px"
-                        />
-                        {/* Subtle label on hover */}
-                        <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-colors duration-200 flex items-end justify-center pb-1">
-                          <span className="text-white text-[10px] font-semibold opacity-0 hover:opacity-100 transition-opacity duration-200 px-1 text-center leading-tight">
-                            {v.label}
-                          </span>
-                        </div>
-                        {/* Divider between images */}
-                        {i < visuals.length - 1 && (
+                        <Image src={v.src} alt={v.label} fill className="object-cover" sizes="200px" />
+                        {vi < visuals.length - 1 && (
                           <div className="absolute top-0 right-0 bottom-0 w-px bg-white/30" />
                         )}
                       </div>
@@ -132,8 +266,8 @@ export default function Packages() {
                     {tx.includes}
                   </p>
                   <ul className="space-y-2.5">
-                    {pkg.includes.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2.5">
+                    {pkg.includes.map((item, ii) => (
+                      <li key={ii} className="flex items-start gap-2.5">
                         <svg
                           className={`w-4 h-4 flex-shrink-0 mt-0.5 ${pkg.highlight ? "text-green-300" : "text-green-600"}`}
                           fill="none"
@@ -152,14 +286,8 @@ export default function Packages() {
 
                 {/* CTA */}
                 <div className="px-6 pb-6">
-                  <a
-                    href={waUrl(
-                      lang === "es"
-                        ? `Hola, me interesa el Paquete ${pkg.name}. ¿Pueden darme más información?`
-                        : `Hi, I'm interested in the ${pkg.name} Package. Can you give me more information?`
-                    )}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={() => setSelected(i)}
                     className={`flex items-center justify-center gap-2 w-full font-semibold text-sm py-3.5 rounded-full transition-all duration-200 ${
                       pkg.highlight
                         ? "bg-white text-green-700 hover:bg-green-50"
@@ -168,7 +296,7 @@ export default function Packages() {
                   >
                     <WhatsAppIcon className="w-4 h-4" />
                     {tx.ctaBook}
-                  </a>
+                  </button>
                 </div>
               </div>
             );
@@ -178,6 +306,16 @@ export default function Packages() {
         {/* Fine print */}
         <p className="text-center text-stone-400 text-sm mt-10">{tx.note}</p>
       </div>
+
+      {selected !== null && selectedPkg && (
+        <BookingModal
+          pkg={selectedPkg}
+          visuals={selectedVisuals}
+          tx={tx}
+          lang={lang}
+          onClose={() => setSelected(null)}
+        />
+      )}
     </section>
   );
 }

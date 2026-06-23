@@ -93,6 +93,11 @@ export const t = {
       minPeople: "Mín. {n} personas",
       includes: "Incluye",
       ctaBook: "Reservar este paquete",
+      formTitle: "Reserva tu paquete",
+      formSubtitle: "Escríbenos por WhatsApp y coordinamos los detalles.",
+      formDate: "Fecha de llegada",
+      formPeople: "Personas",
+      formSend: "Enviar reserva por WhatsApp",
       note: "Precios en Soles peruanos (S/). Consulta disponibilidad por WhatsApp.",
       items: [
         {
@@ -436,6 +441,11 @@ export const t = {
       minPeople: "Min. {n} people",
       includes: "Includes",
       ctaBook: "Book this package",
+      formTitle: "Book your package",
+      formSubtitle: "Message us on WhatsApp and we'll coordinate the details.",
+      formDate: "Arrival date",
+      formPeople: "People",
+      formSend: "Send booking via WhatsApp",
       note: "Prices in Peruvian Soles (S/). Ask about availability on WhatsApp.",
       items: [
         {
