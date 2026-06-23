@@ -30,11 +30,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Granja Ecológica Lindero",
     description: "Reconecta con la naturaleza en Tomaykichwa, Huánuco, Perú.",
-    images: [
-      {
-        url: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1200&q=80",
-      },
-    ],
   },
 };
 
