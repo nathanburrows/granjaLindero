@@ -12,6 +12,11 @@ const pillarImages = [
   "/images/grupos_colegio2.jpg",
 ];
 
+const galleryImages = [
+  { src: "/images/grupos_escuela.jpg", alt: "Visita escolar a la granja" },
+  { src: "/images/grupos_iglesia.jpg", alt: "Grupo en la granja" },
+];
+
 export default function Groups() {
   const { lang } = useLang();
   const tx = t[lang].groups;
@@ -69,6 +74,20 @@ export default function Groups() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Photo gallery */}
+        <div className="grid grid-cols-2 gap-4 mb-20">
+          {galleryImages.map((img) => (
+            <div key={img.src} className="relative h-64 rounded-2xl overflow-hidden">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover"
+              />
+            </div>
+          ))}
         </div>
 
         {/* Activities + Group types side by side */}
