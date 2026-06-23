@@ -19,9 +19,21 @@ export default function About() {
             <h2 className="font-serif text-stone-900 text-4xl md:text-5xl font-bold leading-tight mb-6">
               {tx.title}
             </h2>
-            <p className="text-stone-600 text-lg leading-relaxed mb-10">
+            <p className="text-stone-600 text-lg leading-relaxed mb-8">
               {tx.body}
             </p>
+
+            {/* Mission & Vision */}
+            <div className="space-y-4 mb-10">
+              <div className="border-l-2 border-green-600 pl-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-green-700 mb-1">{tx.missionLabel}</p>
+                <p className="text-stone-600 text-sm leading-relaxed">{tx.mission}</p>
+              </div>
+              <div className="border-l-2 border-stone-300 pl-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-stone-500 mb-1">{tx.visionLabel}</p>
+                <p className="text-stone-600 text-sm leading-relaxed">{tx.vision}</p>
+              </div>
+            </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6">
