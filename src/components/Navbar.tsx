@@ -64,8 +64,8 @@ export default function Navbar() {
           <Image
             src="/images/logo.jpg"
             alt="La Granja Ecológica Lindero"
-            width={56}
-            height={56}
+            width={80}
+            height={80}
             className="rounded-full object-cover"
           />
         </a>
