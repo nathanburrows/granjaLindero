@@ -189,6 +189,12 @@ export const t = {
       subtitle:
         "Iglesias, colegios, empresas y familias encuentran en Granja Lindero el lugar ideal para retiros, paseos y eventos al aire libre.",
       ctaWhatsapp: "Consultar disponibilidad",
+      formTitle: "Consultar disponibilidad",
+      formDate: "Fecha preferida",
+      formPeople: "Número de personas",
+      formInterest: "¿Qué les interesa?",
+      formInterestOptions: ["Experiencias", "Hospedaje", "Evento especial", "Todo incluido"],
+      formSend: "Enviar consulta por WhatsApp",
       pillarsTitle: "Todo en un solo lugar",
       pillars: [
         {
@@ -446,6 +452,12 @@ export const t = {
       subtitle:
         "Churches, schools, companies, and families find in Granja Lindero the ideal place for retreats, outings, and open-air events.",
       ctaWhatsapp: "Check availability",
+      formTitle: "Check availability",
+      formDate: "Preferred date",
+      formPeople: "Number of people",
+      formInterest: "What are you interested in?",
+      formInterestOptions: ["Experiences", "Lodging", "Special event", "All inclusive"],
+      formSend: "Send inquiry via WhatsApp",
       pillarsTitle: "Everything in one place",
       pillars: [
         {
