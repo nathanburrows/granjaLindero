@@ -94,23 +94,23 @@ export default function Navbar() {
           <div className="flex items-center bg-white/10 rounded-full p-0.5 text-xs font-semibold">
             <button
               onClick={() => setLang("es")}
-              className={`px-3 py-1 rounded-full transition-all ${
+              className={`px-3 py-1 rounded-full transition-all flex items-center gap-1.5 ${
                 lang === "es"
                   ? "bg-green-600 text-white shadow"
                   : "text-stone-300 hover:text-white"
               }`}
             >
-              ES
+              <span>🇵🇪</span> ES
             </button>
             <button
               onClick={() => setLang("en")}
-              className={`px-3 py-1 rounded-full transition-all ${
+              className={`px-3 py-1 rounded-full transition-all flex items-center gap-1.5 ${
                 lang === "en"
                   ? "bg-green-600 text-white shadow"
                   : "text-stone-300 hover:text-white"
               }`}
             >
-              EN
+              <span>🇺🇸</span> EN
             </button>
           </div>
 
@@ -151,19 +151,19 @@ export default function Navbar() {
             <div className="flex items-center bg-white/10 rounded-full p-0.5 text-xs font-semibold">
               <button
                 onClick={() => setLang("es")}
-                className={`px-3 py-1.5 rounded-full transition-all ${
+                className={`px-3 py-1.5 rounded-full transition-all flex items-center gap-1.5 ${
                   lang === "es" ? "bg-green-600 text-white" : "text-stone-300"
                 }`}
               >
-                ES
+                <span>🇵🇪</span> ES
               </button>
               <button
                 onClick={() => setLang("en")}
-                className={`px-3 py-1.5 rounded-full transition-all ${
+                className={`px-3 py-1.5 rounded-full transition-all flex items-center gap-1.5 ${
                   lang === "en" ? "bg-green-600 text-white" : "text-stone-300"
                 }`}
               >
-                EN
+                <span>🇺🇸</span> EN
               </button>
             </div>
             <button
