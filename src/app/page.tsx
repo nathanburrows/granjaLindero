@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Experiences from "@/components/Experiences";
+import Packages from "@/components/Packages";
 import Accommodation from "@/components/Accommodation";
 import Restaurant from "@/components/Restaurant";
 import FarmStore from "@/components/FarmStore";
@@ -22,6 +23,7 @@ export default function Home() {
         <Hero />
         <About />
         <Experiences />
+        <Packages />
         <Accommodation />
         <Restaurant />
         <FarmStore />
