@@ -9,6 +9,7 @@ export const t = {
       restaurant: "Restaurante",
       gallery: "Galería",
       store: "Tienda",
+      groups: "Grupos",
       contact: "Contacto",
       reserve: "Reservar",
     },
@@ -186,6 +187,55 @@ export const t = {
       ],
       cta: "Consultar productos",
     },
+    groups: {
+      label: "Grupos",
+      tag: "Grupos y Eventos",
+      title: "El espacio perfecto para tu grupo",
+      subtitle:
+        "Iglesias, colegios, empresas y familias encuentran en Granja Lindero el lugar ideal para retiros, paseos y eventos al aire libre.",
+      ctaWhatsapp: "Consultar disponibilidad",
+      pillarsTitle: "Todo en un solo lugar",
+      pillars: [
+        {
+          id: "experiencias",
+          icon: "🌿",
+          title: "Experiencias",
+          description:
+            "Tour vivencial, talleres de horticultura terapéutica, recorridos educativos y noche de fogón — diseñados para grupos grandes.",
+        },
+        {
+          id: "hospedaje",
+          icon: "🏡",
+          title: "Hospedaje",
+          description:
+            "Bungalow y Casona disponibles para grupos. Capacidad para alojar a tu comunidad con comodidad en plena naturaleza.",
+        },
+        {
+          id: "espacios",
+          icon: "🎪",
+          title: "Espacios para Eventos",
+          description:
+            "Áreas verdes, gazebo y salones al aire libre para celebraciones, retiros espirituales y actividades grupales.",
+        },
+      ],
+      activitiesTitle: "Áreas recreativas incluidas",
+      activities: [
+        { icon: "🏐", label: "Voleibol" },
+        { icon: "⚽", label: "Fútbol" },
+        { icon: "🧺", label: "Área de picnic" },
+        { icon: "🔥", label: "Fogón nocturno" },
+        { icon: "🌳", label: "Senderos naturales" },
+        { icon: "🐄", label: "Interacción con animales" },
+      ],
+      groupsTitle: "Ideal para",
+      groupTypes: [
+        { icon: "⛪", label: "Iglesias y comunidades" },
+        { icon: "🏫", label: "Colegios y universidades" },
+        { icon: "🏢", label: "Empresas y equipos" },
+        { icon: "👨‍👩‍👧‍👦", label: "Familias y amigos" },
+      ],
+      note: "Coordinamos paquetes a medida según el tamaño y necesidades de tu grupo.",
+    },
     gallery: {
       label: "Galería",
       title: "Momentos en la granja",
@@ -223,6 +273,7 @@ export const t = {
       restaurant: "Restaurant",
       gallery: "Gallery",
       store: "Store",
+      groups: "Groups",
       contact: "Contact",
       reserve: "Book Now",
     },
@@ -400,6 +451,55 @@ export const t = {
         { name: "Seasonal products", detail: "Ask on arrival" },
       ],
       cta: "Ask about products",
+    },
+    groups: {
+      label: "Groups",
+      tag: "Groups & Events",
+      title: "The perfect space for your group",
+      subtitle:
+        "Churches, schools, companies, and families find in Granja Lindero the ideal place for retreats, outings, and open-air events.",
+      ctaWhatsapp: "Check availability",
+      pillarsTitle: "Everything in one place",
+      pillars: [
+        {
+          id: "experiencias",
+          icon: "🌿",
+          title: "Experiences",
+          description:
+            "Experiential tour, therapeutic horticulture workshops, educational tours, and campfire nights — designed for large groups.",
+        },
+        {
+          id: "hospedaje",
+          icon: "🏡",
+          title: "Lodging",
+          description:
+            "Bungalow and Casona available for groups. Capacity to comfortably house your community surrounded by nature.",
+        },
+        {
+          id: "espacios",
+          icon: "🎪",
+          title: "Event Spaces",
+          description:
+            "Green areas, gazebo, and open-air spaces for celebrations, spiritual retreats, and group activities.",
+        },
+      ],
+      activitiesTitle: "Recreational areas included",
+      activities: [
+        { icon: "🏐", label: "Volleyball" },
+        { icon: "⚽", label: "Football (Soccer)" },
+        { icon: "🧺", label: "Picnic area" },
+        { icon: "🔥", label: "Campfire night" },
+        { icon: "🌳", label: "Nature trails" },
+        { icon: "🐄", label: "Animal interaction" },
+      ],
+      groupsTitle: "Ideal for",
+      groupTypes: [
+        { icon: "⛪", label: "Churches & communities" },
+        { icon: "🏫", label: "Schools & universities" },
+        { icon: "🏢", label: "Companies & teams" },
+        { icon: "👨‍👩‍👧‍👦", label: "Families & friends" },
+      ],
+      note: "We arrange custom packages based on the size and needs of your group.",
     },
     gallery: {
       label: "Gallery",

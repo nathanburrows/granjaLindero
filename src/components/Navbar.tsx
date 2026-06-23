@@ -21,7 +21,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sectionIds = ["nosotros", "experiencias", "hospedaje", "restaurante", "tienda", "galeria", "contacto"];
+    const sectionIds = ["nosotros", "experiencias", "hospedaje", "restaurante", "tienda", "grupos", "galeria", "contacto"];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -43,6 +43,7 @@ export default function Navbar() {
     { href: "#hospedaje", label: tx.accommodation },
     { href: "#restaurante", label: tx.restaurant },
     { href: "#tienda", label: tx.store },
+    { href: "#grupos", label: tx.groups },
     { href: "#galeria", label: tx.gallery },
     { href: "#contacto", label: tx.contact },
   ];
