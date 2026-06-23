@@ -48,35 +48,35 @@ export const t = {
           title: "Tour Vivencial",
           subtitle: "Animal Friends",
           description:
-            "Conoce de cerca los animales de la granja, interactúa con ellos y disfruta de una degustación de nuestros productos lácteos frescos. Una experiencia inolvidable para toda la familia.",
+            "Conoce de cerca a las vacas, ovejas, alpacas, cuyes, gallinas y más animales que viven en la granja. Interactúa con ellos, aprende sobre su cuidado y la ganadería ecológica, y disfruta de una degustación de nuestros lácteos frescos: leche del día, queso artesanal y yogur natural. Una experiencia inolvidable para toda la familia. Duración aproximada: 2 horas.",
         },
         {
           id: "horticultura",
           title: "Taller Conexión Verde",
           subtitle: "Horticultura Terapéutica",
           description:
-            "Reconecta con la naturaleza a través de la horticultura terapéutica. Taller de 1:30 a 2 horas con mascarillas naturales, kokedamas, suculentas, pigmentos naturales y más. S/.50 por persona.",
+            "Un espacio de bienestar donde reconectarás con la naturaleza a través de la horticultura terapéutica. Crea tu propia mascarilla natural, arma un kokedama, trabaja con suculentas, pigmentos naturales o estampado botánico — tú eliges. Ideal para grupos de 7 a 15 personas. Duración: 1:30 a 2 horas. S/.50 por persona.",
         },
         {
           id: "educativo",
           title: "Circuito Ecológico",
           subtitle: "Recorrido por la granja",
           description:
-            "Recorre los senderos ecológicos de la granja, aprende sobre agroecología y vida sostenible. Al finalizar, llévate una plantita de recuerdo a casa.",
+            "Recorre los senderos verdes de la granja y descubre cómo funciona un ecosistema rural sostenible. Aprenderás sobre agroecología, ganadería ecológica y vida en armonía con la naturaleza. Al finalizar el recorrido, ¡te llevas una plantita de regalo a casa!",
         },
         {
           id: "privado",
           title: "Sesión Especial",
           subtitle: "Arma tu experiencia",
           description:
-            "Elige el taller que más te guste y arma tu sesión a medida para tu familia, amig@s o equipo de trabajo. Disponible con opción de almuerzo incluido.",
+            "Arma tu propia experiencia a medida combinando el Tour Animal Friends, el Taller Conexión Verde, el Circuito Ecológico y más. Perfecta para cumpleaños, actividades corporativas, retiros familiares o cualquier ocasión especial. Consulta opciones con y sin almuerzo incluido.",
         },
         {
           id: "fogon",
           title: "Noche de Fogón",
           subtitle: "Bajo las estrellas",
           description:
-            "Reúnete alrededor del fuego, asa alimentos al palo y comparte historias bajo el cielo andino. Una experiencia nocturna única incluida en los paquetes de hospedaje.",
+            "Vive una noche mágica bajo el cielo andino de Tomaykichwa. Reúnete alrededor de la fogata, asa salchichas y alimentos al palo, comparte historias y disfruta de la tranquilidad del campo lejos del ruido de la ciudad. Incluida en los paquetes de hospedaje 2D/1N y 3D/2N.",
         },
       ],
     },
@@ -387,35 +387,35 @@ export const t = {
           title: "Experiential Tour",
           subtitle: "Animal Friends",
           description:
-            "Meet and interact with the farm animals up close, then enjoy a tasting of our fresh dairy products. An unforgettable experience for the whole family.",
+            "Meet cows, sheep, alpacas, guinea pigs, hens, and more animals that call the farm home. Interact with them, learn about their care and ecological farming practices, and enjoy a tasting of our fresh dairy products: same-day milk, artisan cheese, and natural yogurt. An unforgettable experience for the whole family. Duration: approx. 2 hours.",
         },
         {
           id: "horticultura",
           title: "Conexión Verde Workshop",
           subtitle: "Therapeutic Horticulture",
           description:
-            "Reconnect with nature through therapeutic horticulture. A 1.5–2 hour workshop including natural face masks, kokedamas, succulents, natural pigments, and more. S/.50 per person.",
+            "A wellness experience where you reconnect with nature through therapeutic horticulture. Create your own natural face mask, make a kokedama, work with succulents, natural pigments, or botanical stamping — your choice. Ideal for groups of 7 to 15 people. Duration: 1.5–2 hours. S/.50 per person.",
         },
         {
           id: "educativo",
           title: "Ecological Circuit",
           subtitle: "Farm trail tour",
           description:
-            "Walk the ecological trails of the farm, learn about agroecology and sustainable living. At the end, take home a seedling as a souvenir.",
+            "Walk the green trails of the farm and discover how a sustainable rural ecosystem works. You'll learn about agroecology, ecological livestock farming, and living in harmony with nature. At the end of the tour, take home a seedling as a gift!",
         },
         {
           id: "privado",
           title: "Special Session",
           subtitle: "Build your experience",
           description:
-            "Choose the workshop you like most and build a custom session for your family, friends, or work team. Available with lunch option included.",
+            "Design your own custom experience by combining the Animal Friends Tour, Conexión Verde Workshop, Ecological Circuit, and more. Perfect for birthdays, corporate activities, family retreats, or any special occasion. Ask about options with or without lunch included.",
         },
         {
           id: "fogon",
           title: "Campfire Night",
           subtitle: "Under the stars",
           description:
-            "Gather around the fire, roast food on sticks, and share stories under the Andean sky. A unique evening experience included in our lodging packages.",
+            "Spend a magical evening under the Andean sky of Tomaykichwa. Gather around the campfire, roast sausages and food on sticks, share stories, and enjoy the peace of the countryside away from the noise of the city. Included in the 2D/1N and 3D/2N lodging packages.",
         },
       ],
     },

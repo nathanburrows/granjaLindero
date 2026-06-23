@@ -1,16 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useLang } from "@/lib/LangContext";
 import { t } from "@/lib/translations";
 import { waUrl } from "@/lib/contact";
-
-function CheckIcon() {
-  return (
-    <svg className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-    </svg>
-  );
-}
 
 function WhatsAppIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
@@ -19,6 +12,30 @@ function WhatsAppIcon({ className = "w-5 h-5" }: { className?: string }) {
     </svg>
   );
 }
+
+const packageVisuals: Record<string, { src: string; label: string }[]> = {
+  halfday: [
+    { src: "/images/animales_alpacas.jpg", label: "Animal Friends" },
+    { src: "/images/restaurant_juane_plato.jpg", label: "Almuerzo" },
+  ],
+  fullday: [
+    { src: "/images/animales_ternero_biberon.jpg", label: "Animal Friends" },
+    { src: "/images/paisaje_sendero_montana.jpg", label: "Circuito Ecológico" },
+    { src: "/images/restaurant_juane_plato.jpg", label: "Almuerzo" },
+  ],
+  "2d1n": [
+    { src: "/images/animales_alpacas.jpg", label: "Animal Friends" },
+    { src: "/images/actividades_cosecha_huerto.jpg", label: "Taller Verde" },
+    { src: "/images/hospedaje_cabana_bosque.jpg", label: "Hospedaje" },
+    { src: "/images/experiencias_fogon_noche.jpg", label: "Fogón" },
+  ],
+  "3d2n": [
+    { src: "/images/animales_ternero_biberon.jpg", label: "Animal Friends" },
+    { src: "/images/actividades_cosecha_huerto.jpg", label: "Taller Verde" },
+    { src: "/images/hospedaje_cabana_bosque.jpg", label: "Hospedaje" },
+    { src: "/images/paisaje_campo_huanuco.jpg", label: "Hacienda" },
+  ],
+};
 
 export default function Packages() {
   const { lang } = useLang();
@@ -40,88 +57,122 @@ export default function Packages() {
 
         {/* Cards */}
         <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
-          {tx.items.map((pkg) => (
-            <div
-              key={pkg.id}
-              className={`relative rounded-3xl flex flex-col overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                pkg.highlight
-                  ? "bg-green-700 border-green-600 text-white shadow-lg shadow-green-900/20"
-                  : "bg-white border-stone-200 text-stone-900"
-              }`}
-            >
-              {pkg.highlight && (
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-400 to-emerald-300" />
-              )}
-
-              {/* Top */}
-              <div className={`px-7 pt-8 pb-6 border-b ${pkg.highlight ? "border-green-600/50" : "border-stone-100"}`}>
-                <p className={`text-xs font-bold uppercase tracking-widest mb-2 ${pkg.highlight ? "text-green-300" : "text-green-700"}`}>
-                  {pkg.tagline}
-                </p>
-                <h3 className={`font-serif text-2xl font-bold mb-4 ${pkg.highlight ? "text-white" : "text-stone-900"}`}>
-                  {pkg.name}
-                </h3>
-                <div className="flex items-end gap-1.5">
-                  <span className={`font-serif text-5xl font-bold leading-none ${pkg.highlight ? "text-white" : "text-stone-900"}`}>
-                    {pkg.price}
-                  </span>
-                  <span className={`text-sm mb-1 ${pkg.highlight ? "text-green-200" : "text-stone-500"}`}>
-                    / {tx.perPerson}
-                  </span>
-                </div>
-                {pkg.minPeople > 1 && (
-                  <p className={`text-xs mt-2 ${pkg.highlight ? "text-green-300" : "text-stone-400"}`}>
-                    {tx.minPeople.replace("{n}", String(pkg.minPeople))}
-                  </p>
+          {tx.items.map((pkg) => {
+            const visuals = packageVisuals[pkg.id] ?? [];
+            return (
+              <div
+                key={pkg.id}
+                className={`relative rounded-3xl flex flex-col overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                  pkg.highlight
+                    ? "bg-green-700 border-green-600 text-white shadow-lg shadow-green-900/20"
+                    : "bg-white border-stone-200 text-stone-900"
+                }`}
+              >
+                {pkg.highlight && (
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-400 to-emerald-300" />
                 )}
-              </div>
 
-              {/* Includes */}
-              <div className="px-7 py-6 flex-1">
-                <p className={`text-xs font-bold uppercase tracking-wider mb-4 ${pkg.highlight ? "text-green-300" : "text-stone-400"}`}>
-                  {tx.includes}
-                </p>
-                <ul className="space-y-3">
-                  {pkg.includes.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2.5">
-                      <svg
-                        className={`w-4 h-4 flex-shrink-0 mt-0.5 ${pkg.highlight ? "text-green-300" : "text-green-600"}`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                {/* Photo strip */}
+                {visuals.length > 0 && (
+                  <div className="flex h-28 overflow-hidden">
+                    {visuals.map((v, i) => (
+                      <div
+                        key={i}
+                        className="relative flex-1 overflow-hidden"
+                        style={{ flexBasis: `${100 / visuals.length}%` }}
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className={`text-sm leading-snug ${pkg.highlight ? "text-green-100" : "text-stone-600"}`}>
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                        <Image
+                          src={v.src}
+                          alt={v.label}
+                          fill
+                          className="object-cover"
+                          sizes="200px"
+                        />
+                        {/* Subtle label on hover */}
+                        <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-colors duration-200 flex items-end justify-center pb-1">
+                          <span className="text-white text-[10px] font-semibold opacity-0 hover:opacity-100 transition-opacity duration-200 px-1 text-center leading-tight">
+                            {v.label}
+                          </span>
+                        </div>
+                        {/* Divider between images */}
+                        {i < visuals.length - 1 && (
+                          <div className="absolute top-0 right-0 bottom-0 w-px bg-white/30" />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
 
-              {/* CTA */}
-              <div className="px-7 pb-7">
-                <a
-                  href={waUrl(
-                    lang === "es"
-                      ? `Hola, me interesa el Paquete ${pkg.name}. ¿Pueden darme más información?`
-                      : `Hi, I'm interested in the ${pkg.name} Package. Can you give me more information?`
+                {/* Top */}
+                <div className={`px-6 pt-6 pb-5 border-b ${pkg.highlight ? "border-green-600/50" : "border-stone-100"}`}>
+                  <p className={`text-xs font-bold uppercase tracking-widest mb-1.5 ${pkg.highlight ? "text-green-300" : "text-green-700"}`}>
+                    {pkg.tagline}
+                  </p>
+                  <h3 className={`font-serif text-2xl font-bold mb-3 ${pkg.highlight ? "text-white" : "text-stone-900"}`}>
+                    {pkg.name}
+                  </h3>
+                  <div className="flex items-end gap-1.5">
+                    <span className={`font-serif text-5xl font-bold leading-none ${pkg.highlight ? "text-white" : "text-stone-900"}`}>
+                      {pkg.price}
+                    </span>
+                    <span className={`text-sm mb-1 ${pkg.highlight ? "text-green-200" : "text-stone-500"}`}>
+                      / {tx.perPerson}
+                    </span>
+                  </div>
+                  {pkg.minPeople > 1 && (
+                    <p className={`text-xs mt-2 ${pkg.highlight ? "text-green-300" : "text-stone-400"}`}>
+                      {tx.minPeople.replace("{n}", String(pkg.minPeople))}
+                    </p>
                   )}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex items-center justify-center gap-2 w-full font-semibold text-sm py-3.5 rounded-full transition-all duration-200 ${
-                    pkg.highlight
-                      ? "bg-white text-green-700 hover:bg-green-50"
-                      : "bg-green-600 hover:bg-green-500 text-white"
-                  }`}
-                >
-                  <WhatsAppIcon className="w-4 h-4" />
-                  {tx.ctaBook}
-                </a>
+                </div>
+
+                {/* Includes */}
+                <div className="px-6 py-5 flex-1">
+                  <p className={`text-xs font-bold uppercase tracking-wider mb-3 ${pkg.highlight ? "text-green-300" : "text-stone-400"}`}>
+                    {tx.includes}
+                  </p>
+                  <ul className="space-y-2.5">
+                    {pkg.includes.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2.5">
+                        <svg
+                          className={`w-4 h-4 flex-shrink-0 mt-0.5 ${pkg.highlight ? "text-green-300" : "text-green-600"}`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className={`text-sm leading-snug ${pkg.highlight ? "text-green-100" : "text-stone-600"}`}>
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* CTA */}
+                <div className="px-6 pb-6">
+                  <a
+                    href={waUrl(
+                      lang === "es"
+                        ? `Hola, me interesa el Paquete ${pkg.name}. ¿Pueden darme más información?`
+                        : `Hi, I'm interested in the ${pkg.name} Package. Can you give me more information?`
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center justify-center gap-2 w-full font-semibold text-sm py-3.5 rounded-full transition-all duration-200 ${
+                      pkg.highlight
+                        ? "bg-white text-green-700 hover:bg-green-50"
+                        : "bg-green-600 hover:bg-green-500 text-white"
+                    }`}
+                  >
+                    <WhatsAppIcon className="w-4 h-4" />
+                    {tx.ctaBook}
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Fine print */}
