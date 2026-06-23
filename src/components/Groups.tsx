@@ -7,9 +7,9 @@ import { t } from "@/lib/translations";
 const PHONE = "51966721057";
 
 const pillarImages = [
-  "/images/grupos_actividades.jpg",
+  "/images/grupos_escuela.jpg",
   "/images/grupos_colegio1.jpg",
-  "/images/grupos_colegio2.jpg",
+  "/images/grupos_iglesia.jpg",
 ];
 
 const galleryImages = [
