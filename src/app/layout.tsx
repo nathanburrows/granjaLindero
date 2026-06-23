@@ -18,7 +18,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "La Granja Ecológica Lindero | Tomaykichwa, Huánuco, Perú",
   description:
-    "Vive una experiencia única en la La Granja Ecológica Lindero. Hospedaje campestre, restaurante, granja interactiva, talleres de horticultura terapéutica y más en Tomaykichwa, Huánuco, Perú.",
+    "Vive una experiencia única en La Granja Ecológica Lindero. Hospedaje campestre, restaurante, granja interactiva, talleres de horticultura terapéutica y más en Tomaykichwa, Huánuco, Perú.",
   keywords: [
     "granja ecológica",
     "Huánuco",
