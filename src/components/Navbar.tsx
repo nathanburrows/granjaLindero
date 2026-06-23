@@ -101,7 +101,7 @@ export default function Navbar() {
                   : "text-stone-300 hover:text-white"
               }`}
             >
-              ES
+              🇵🇪 ES
             </button>
             <button
               onClick={() => setLang("en")}
@@ -111,7 +111,7 @@ export default function Navbar() {
                   : "text-stone-300 hover:text-white"
               }`}
             >
-              EN
+              🇺🇸 EN
             </button>
           </div>
 
