@@ -85,7 +85,7 @@ function BookingModal({
       <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden">
         {/* Photo strip header */}
         {visuals.length > 0 && (
-          <div className="flex h-36 overflow-hidden">
+          <div className="relative flex h-36 overflow-hidden">
             {visuals.map((v, i) => (
               <div key={i} className="relative flex-1 overflow-hidden">
                 <Image src={v.src} alt={v.label} fill className="object-cover" sizes="200px" />
@@ -94,7 +94,6 @@ function BookingModal({
                 )}
               </div>
             ))}
-            <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-transparent to-black/40 pointer-events-none" />
           </div>
         )}
 
