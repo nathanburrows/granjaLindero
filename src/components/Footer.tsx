@@ -67,7 +67,14 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <svg className="w-4 h-4 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                <span>Carretera a Ambo km 2, Huánuco, Perú</span>
+                <a
+                  href="https://www.google.com/maps/place/Granja+Lindero/@-10.095147,-76.2092745,17z/data=!3m1!4b1!4m6!3m5!1s0x91a7eef3fa94d67d:0x418753c3617cf802!8m2!3d-10.095147!4d-76.2066996!16s%2Fg%2F11c1sz4fr8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Carretera a Ambo km 2, Huánuco, Perú
+                </a>
               </li>
               <li>
                 <a href="tel:+51966721057" className="hover:text-white transition-colors">

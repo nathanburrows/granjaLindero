@@ -46,9 +46,14 @@ export default function Location() {
                   </svg>
                 </div>
                 <div>
-                  <div className="font-semibold text-stone-800">
+                  <a
+                    href="https://www.google.com/maps/place/Granja+Lindero/@-10.095147,-76.2092745,17z/data=!3m1!4b1!4m6!3m5!1s0x91a7eef3fa94d67d:0x418753c3617cf802!8m2!3d-10.095147!4d-76.2066996!16s%2Fg%2F11c1sz4fr8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-stone-800 hover:text-green-700 transition-colors"
+                  >
                     {tx.address}
-                  </div>
+                  </a>
                   <div className="text-stone-500 text-sm mt-0.5">{tx.directions}</div>
                 </div>
               </div>
