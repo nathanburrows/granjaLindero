@@ -44,7 +44,6 @@ export const t = {
       items: [
         {
           id: "tour",
-          icon: "🐄",
           title: "Tour Vivencial",
           subtitle: "Animal Friends",
           description:
@@ -52,7 +51,6 @@ export const t = {
         },
         {
           id: "horticultura",
-          icon: "🌿",
           title: "Horticultura Terapéutica",
           subtitle: "Talleres de bienestar",
           description:
@@ -60,7 +58,6 @@ export const t = {
         },
         {
           id: "educativo",
-          icon: "👩‍🌾",
           title: "Recorridos Educativos",
           subtitle: "Aprende en la naturaleza",
           description:
@@ -68,7 +65,6 @@ export const t = {
         },
         {
           id: "privado",
-          icon: "✨",
           title: "Sesión Especial",
           subtitle: "Arma tu experiencia",
           description:
@@ -76,7 +72,6 @@ export const t = {
         },
         {
           id: "fogon",
-          icon: "🔥",
           title: "Noche de Fogón",
           subtitle: "Bajo las estrellas",
           description:
@@ -198,21 +193,18 @@ export const t = {
       pillars: [
         {
           id: "experiencias",
-          icon: "🌿",
           title: "Experiencias",
           description:
             "Tour vivencial, talleres de horticultura terapéutica, recorridos educativos y noche de fogón — diseñados para grupos grandes.",
         },
         {
           id: "hospedaje",
-          icon: "🏡",
           title: "Hospedaje",
           description:
             "Bungalow y Casona disponibles para grupos. Capacidad para alojar a tu comunidad con comodidad en plena naturaleza.",
         },
         {
           id: "espacios",
-          icon: "🎪",
           title: "Espacios para Eventos",
           description:
             "Áreas verdes, gazebo y salones al aire libre para celebraciones, retiros espirituales y actividades grupales.",
@@ -220,19 +212,19 @@ export const t = {
       ],
       activitiesTitle: "Áreas recreativas incluidas",
       activities: [
-        { icon: "🏐", label: "Voleibol" },
-        { icon: "⚽", label: "Fútbol" },
-        { icon: "🧺", label: "Área de picnic" },
-        { icon: "🔥", label: "Fogón nocturno" },
-        { icon: "🌳", label: "Senderos naturales" },
-        { icon: "🐄", label: "Interacción con animales" },
+        { label: "Voleibol" },
+        { label: "Fútbol" },
+        { label: "Área de picnic" },
+        { label: "Fogón nocturno" },
+        { label: "Senderos naturales" },
+        { label: "Interacción con animales" },
       ],
       groupsTitle: "Ideal para",
       groupTypes: [
-        { icon: "⛪", label: "Iglesias y comunidades" },
-        { icon: "🏫", label: "Colegios y universidades" },
-        { icon: "🏢", label: "Empresas y equipos" },
-        { icon: "👨‍👩‍👧‍👦", label: "Familias y amigos" },
+        { label: "Iglesias y comunidades" },
+        { label: "Colegios y universidades" },
+        { label: "Empresas y equipos" },
+        { label: "Familias y amigos" },
       ],
       note: "Coordinamos paquetes a medida según el tamaño y necesidades de tu grupo.",
     },
@@ -309,7 +301,6 @@ export const t = {
       items: [
         {
           id: "tour",
-          icon: "🐄",
           title: "Experiential Tour",
           subtitle: "Animal Friends",
           description:
@@ -317,7 +308,6 @@ export const t = {
         },
         {
           id: "horticultura",
-          icon: "🌿",
           title: "Therapeutic Horticulture",
           subtitle: "Wellness workshops",
           description:
@@ -325,7 +315,6 @@ export const t = {
         },
         {
           id: "educativo",
-          icon: "👩‍🌾",
           title: "Educational Tours",
           subtitle: "Learn in nature",
           description:
@@ -333,7 +322,6 @@ export const t = {
         },
         {
           id: "privado",
-          icon: "✨",
           title: "Special Session",
           subtitle: "Build your experience",
           description:
@@ -341,7 +329,6 @@ export const t = {
         },
         {
           id: "fogon",
-          icon: "🔥",
           title: "Campfire Night",
           subtitle: "Under the stars",
           description:
@@ -463,21 +450,18 @@ export const t = {
       pillars: [
         {
           id: "experiencias",
-          icon: "🌿",
           title: "Experiences",
           description:
             "Experiential tour, therapeutic horticulture workshops, educational tours, and campfire nights — designed for large groups.",
         },
         {
           id: "hospedaje",
-          icon: "🏡",
           title: "Lodging",
           description:
             "Bungalow and Casona available for groups. Capacity to comfortably house your community surrounded by nature.",
         },
         {
           id: "espacios",
-          icon: "🎪",
           title: "Event Spaces",
           description:
             "Green areas, gazebo, and open-air spaces for celebrations, spiritual retreats, and group activities.",
@@ -485,19 +469,19 @@ export const t = {
       ],
       activitiesTitle: "Recreational areas included",
       activities: [
-        { icon: "🏐", label: "Volleyball" },
-        { icon: "⚽", label: "Football (Soccer)" },
-        { icon: "🧺", label: "Picnic area" },
-        { icon: "🔥", label: "Campfire night" },
-        { icon: "🌳", label: "Nature trails" },
-        { icon: "🐄", label: "Animal interaction" },
+        { label: "Volleyball" },
+        { label: "Football (Soccer)" },
+        { label: "Picnic area" },
+        { label: "Campfire night" },
+        { label: "Nature trails" },
+        { label: "Animal interaction" },
       ],
       groupsTitle: "Ideal for",
       groupTypes: [
-        { icon: "⛪", label: "Churches & communities" },
-        { icon: "🏫", label: "Schools & universities" },
-        { icon: "🏢", label: "Companies & teams" },
-        { icon: "👨‍👩‍👧‍👦", label: "Families & friends" },
+        { label: "Churches & communities" },
+        { label: "Schools & universities" },
+        { label: "Companies & teams" },
+        { label: "Families & friends" },
       ],
       note: "We arrange custom packages based on the size and needs of your group.",
     },

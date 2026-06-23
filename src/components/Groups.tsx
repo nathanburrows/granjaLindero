@@ -63,7 +63,6 @@ export default function Groups() {
                 </div>
                 {/* Content */}
                 <div className="p-6">
-                  <div className="text-3xl mb-3">{pillar.icon}</div>
                   <h3 className="text-xl font-bold text-white mb-2">{pillar.title}</h3>
                   <p className="text-stone-400 text-sm leading-relaxed">{pillar.description}</p>
                 </div>
@@ -82,9 +81,8 @@ export default function Groups() {
               {tx.activities.map((a) => (
                 <div
                   key={a.label}
-                  className="flex items-center gap-3 bg-stone-800/60 rounded-xl px-4 py-3"
+                  className="flex items-center bg-stone-800/60 rounded-xl px-4 py-3"
                 >
-                  <span className="text-2xl">{a.icon}</span>
                   <span className="text-stone-200 text-sm font-medium">{a.label}</span>
                 </div>
               ))}
@@ -98,9 +96,8 @@ export default function Groups() {
               {tx.groupTypes.map((g) => (
                 <div
                   key={g.label}
-                  className="flex items-center gap-3 bg-stone-800/60 rounded-xl px-4 py-3"
+                  className="flex items-center bg-stone-800/60 rounded-xl px-4 py-3"
                 >
-                  <span className="text-2xl">{g.icon}</span>
                   <span className="text-stone-200 text-sm font-medium">{g.label}</span>
                 </div>
               ))}
