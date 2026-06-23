@@ -112,7 +112,7 @@ export default function Experiences() {
       {/* Booking modal */}
       {selected !== null && selectedItem && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/80 backdrop-blur-sm"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-stone-900/80 backdrop-blur-sm"
           onClick={(e) => e.target === e.currentTarget && setSelected(null)}
         >
           <div className="bg-white rounded-3xl shadow-2xl w-full max-w-lg overflow-hidden">

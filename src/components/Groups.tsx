@@ -61,7 +61,7 @@ function GroupModal({ onClose, lang }: { onClose: () => void; lang: "es" | "en" 
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/80 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-stone-900/80 backdrop-blur-sm"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden">
