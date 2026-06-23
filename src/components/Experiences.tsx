@@ -70,22 +70,25 @@ export default function Experiences() {
               <div className="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/30 to-transparent group-hover:from-stone-900/95 transition-colors duration-300" />
 
               {/* Content */}
-              <div className="relative z-10 p-6 h-80 flex flex-col justify-end">
-                <div className="text-green-400 text-xs font-bold uppercase tracking-widest mb-1">
-                  {item.subtitle}
-                </div>
-                <h3 className="font-serif text-white text-xl font-bold mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-stone-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 mb-4 line-clamp-3">
-                  {item.description}
-                </p>
-                {/* Book button — visible on hover */}
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="inline-flex items-center gap-1.5 bg-green-500 hover:bg-green-400 text-white text-xs font-semibold px-4 py-2 rounded-full">
+              <div className="relative z-10 p-6 h-80 flex flex-col">
+                {/* Description + button — float above title on hover */}
+                <div className="flex-1 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 pb-3">
+                  <p className="text-stone-300 text-sm leading-relaxed mb-3 line-clamp-3">
+                    {item.description}
+                  </p>
+                  <span className="inline-flex items-center gap-1.5 bg-green-500 hover:bg-green-400 text-white text-xs font-semibold px-4 py-2 rounded-full w-fit">
                     <WhatsAppIcon className="w-3.5 h-3.5" />
                     {tx.bookCta}
                   </span>
+                </div>
+                {/* Title — always anchored to bottom */}
+                <div>
+                  <div className="text-green-400 text-xs font-bold uppercase tracking-widest mb-1">
+                    {item.subtitle}
+                  </div>
+                  <h3 className="font-serif text-white text-xl font-bold">
+                    {item.title}
+                  </h3>
                 </div>
               </div>
             </div>
