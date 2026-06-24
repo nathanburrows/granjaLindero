@@ -8,9 +8,18 @@ export default function Hero() {
   const tx = t[lang].hero;
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
+      {/* Background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/video/hero-bg.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+      {/* Fallback image for when video can't play */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center -z-10"
         style={{ backgroundImage: `url('/images/paisaje_campo_huanuco.jpg')` }}
       />
       {/* Overlay */}
