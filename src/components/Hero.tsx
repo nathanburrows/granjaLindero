@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLang } from "@/lib/LangContext";
 import { t } from "@/lib/translations";
 
-const FADE_MS = 1500;
+const FADE_MS = 4000;
 
 export default function Hero() {
   const { lang } = useLang();
@@ -47,7 +47,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <video
         ref={vidA}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ${aOnTop ? "opacity-100 z-0" : "opacity-0 -z-10"}`}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[4000ms] ${aOnTop ? "opacity-100 z-0" : "opacity-0 -z-10"}`}
         src="/video/hero-bg.mp4"
         autoPlay
         muted
@@ -55,7 +55,7 @@ export default function Hero() {
       />
       <video
         ref={vidB}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ${aOnTop ? "opacity-0 -z-10" : "opacity-100 z-0"}`}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[4000ms] ${aOnTop ? "opacity-0 -z-10" : "opacity-100 z-0"}`}
         src="/video/hero-bg.mp4"
         muted
         playsInline
