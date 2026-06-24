@@ -39,7 +39,25 @@ function MissionModal({ onClose, tx }: { onClose: () => void; tx: AboutTx }) {
         <div className="px-7 py-6 space-y-6">
           <div className="border-l-2 border-green-600 pl-4">
             <p className="text-xs font-bold uppercase tracking-widest text-green-700 mb-2">{tx.missionLabel}</p>
-            <p className="text-stone-600 text-sm leading-relaxed">{tx.mission}</p>
+            <p className="text-stone-600 text-sm leading-relaxed">
+              {tx.mission.split(tx.missionLinkText).map((part, i, arr) =>
+                i < arr.length - 1 ? (
+                  <span key={i}>
+                    {part}
+                    <a
+                      href={tx.missionLinkUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-700 font-semibold underline underline-offset-2 hover:text-green-600 transition-colors"
+                    >
+                      {tx.missionLinkText}
+                    </a>
+                  </span>
+                ) : (
+                  <span key={i}>{part}</span>
+                )
+              )}
+            </p>
           </div>
           <div className="border-l-2 border-stone-200 pl-4">
             <p className="text-xs font-bold uppercase tracking-widest text-stone-400 mb-2">{tx.visionLabel}</p>
