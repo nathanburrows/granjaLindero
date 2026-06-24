@@ -196,7 +196,7 @@ export const t = {
           name: "Bungalow",
           subtitle: "Duerme entre la naturaleza",
           description: "Bungalow privado rodeado de árboles frutales en el corazón de la granja. Acogedor y tranquilo, con baños privados, ropa de cama incluida y hervidor eléctrico. Ideal para parejas o grupos pequeños que buscan desconectarse completamente.",
-          features: ["WiFi gratuito", "Baños privados con ducha", "Ropa de cama y toallas", "Hervidor eléctrico", "Refrigeradora", "Terraza y jardín", "Estacionamiento privado gratuito", "Seguridad 24 horas"],
+          features: ["WiFi gratuito", "Baños privados con ducha", "Ropa de cama y toallas", "Hervidor eléctrico", "Refrigeradora", "Terraza y jardín", "Restaurante en sitio (cocina peruana)", "Área de juegos infantiles", "Estacionamiento privado gratuito", "Seguridad 24 horas"],
           img: "/images/hospedaje_cabana_bosque.jpg",
         },
         {
@@ -717,7 +717,7 @@ export const t = {
           name: "Bungalow",
           subtitle: "Sleep surrounded by nature",
           description: "Private bungalow nestled among fruit trees in the heart of the farm. Cozy and peaceful, with private bathrooms, fresh linens, and an electric kettle. Perfect for couples or small groups looking to fully unplug.",
-          features: ["Free WiFi", "Private bathroom with shower", "Fresh linens & towels", "Electric kettle", "Refrigerator", "Terrace & garden", "Free private parking", "24-hour security"],
+          features: ["Free WiFi", "Private bathroom with shower", "Fresh linens & towels", "Electric kettle", "Refrigerator", "Terrace & garden", "On-site restaurant (Peruvian cuisine)", "Children's playground", "Free private parking", "24-hour security"],
           img: "/images/hospedaje_cabana_bosque.jpg",
         },
         {
