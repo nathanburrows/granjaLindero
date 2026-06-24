@@ -62,9 +62,8 @@ function Stepper({ value, min = 0, max = 20, onChange }: { value: number; min?: 
   );
 }
 
-function RoomCard({ room, breakfastAddon, cta, booking, effectiveCheckOut, datesValid }: {
+function RoomCard({ room, cta, booking, effectiveCheckOut, datesValid }: {
   room: { id: string; building: string; title: string; description: string; features: string[]; img: string };
-  breakfastAddon: string;
   cta: string;
   booking: Booking;
   effectiveCheckOut: string;
@@ -91,7 +90,7 @@ function RoomCard({ room, breakfastAddon, cta, booking, effectiveCheckOut, dates
       <div className="p-5 flex flex-col flex-1">
         <h5 className="font-serif text-stone-900 font-bold mb-1">{room.title}</h5>
         <p className="text-stone-500 text-xs leading-relaxed mb-3">{room.description}</p>
-        <ul className="space-y-1 mb-3">
+        <ul className="space-y-1 mb-4">
           {room.features.map((f) => (
             <li key={f} className="flex items-center gap-1.5 text-stone-600 text-xs">
               <span className="text-green-600 flex-shrink-0"><CheckIcon /></span>
@@ -99,7 +98,6 @@ function RoomCard({ room, breakfastAddon, cta, booking, effectiveCheckOut, dates
             </li>
           ))}
         </ul>
-        <div className="text-xs text-amber-600 font-medium mb-4">{breakfastAddon}</div>
         {datesValid ? (
           <a
             href={roomWaUrl}
@@ -224,21 +222,38 @@ export default function Accommodation() {
         >
           <div className="bg-white rounded-3xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-stone-100">
-              <div>
-                <h3 className="font-serif text-stone-900 text-2xl font-bold">
-                  {tx.buildings.find((b) => b.id === selectedBuildingId)?.name}
-                </h3>
-                <p className="text-stone-500 text-sm mt-0.5">La Granja Ecológica Lindero · Huánuco, Perú</p>
+            <div className="p-6 border-b border-stone-100">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="font-serif text-stone-900 text-2xl font-bold">
+                    {tx.buildings.find((b) => b.id === selectedBuildingId)?.name}
+                  </h3>
+                  <p className="text-stone-500 text-sm mt-0.5">La Granja Ecológica Lindero · Huánuco, Perú</p>
+                </div>
+                <button
+                  onClick={() => setSelectedBuildingId(null)}
+                  className="w-9 h-9 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center transition-colors flex-shrink-0"
+                >
+                  <svg className="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
               </div>
-              <button
-                onClick={() => setSelectedBuildingId(null)}
-                className="w-9 h-9 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center transition-colors"
-              >
-                <svg className="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
+              {/* Check-in/out + rules */}
+              <div className="mt-4 flex flex-wrap gap-2">
+                {[tx.checkIn, tx.checkOut].map((s) => (
+                  <span key={s} className="inline-flex items-center gap-1.5 bg-stone-100 text-stone-600 text-xs font-medium px-3 py-1.5 rounded-full">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    {s}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-3 text-xs text-amber-700 bg-amber-50 border border-amber-100 rounded-xl px-4 py-2.5 leading-relaxed">
+                {tx.bookingNote}
+              </p>
+              <p className="mt-2 text-xs text-stone-400">{tx.rulesNote}</p>
             </div>
 
             {/* Booking form */}
@@ -335,7 +350,7 @@ export default function Accommodation() {
                 </div>
                 <span className="text-sm font-medium text-stone-700 group-hover:text-stone-900 transition-colors">
                   {tx.formBreakfast}
-                  <span className="text-stone-400 font-normal ml-1 text-xs">— {tx.breakfastAddon.replace("+ ", "")}</span>
+                  <span className="text-stone-400 font-normal ml-1 text-xs">— {tx.breakfastAddon}</span>
                 </span>
               </label>
             </div>
@@ -344,7 +359,7 @@ export default function Accommodation() {
               {/* Primary building rooms */}
               <div className="grid sm:grid-cols-2 gap-4">
                 {primaryRooms.map((room) => (
-                  <RoomCard key={room.id} room={room} breakfastAddon={tx.breakfastAddon} cta={tx.formBookCta} booking={booking} effectiveCheckOut={effectiveCheckOut} datesValid={datesValid} />
+                  <RoomCard key={room.id} room={room} cta={tx.formBookCta} booking={booking} effectiveCheckOut={effectiveCheckOut} datesValid={datesValid} />
                 ))}
               </div>
 
@@ -366,7 +381,7 @@ export default function Accommodation() {
                   </div>
                   <div className="p-4 grid sm:grid-cols-2 gap-4">
                     {secondaryRooms.map((room) => (
-                      <RoomCard key={room.id} room={room} breakfastAddon={tx.breakfastAddon} cta={tx.formBookCta} booking={booking} effectiveCheckOut={effectiveCheckOut} datesValid={datesValid} />
+                      <RoomCard key={room.id} room={room} cta={tx.formBookCta} booking={booking} effectiveCheckOut={effectiveCheckOut} datesValid={datesValid} />
                     ))}
                   </div>
                 </div>
