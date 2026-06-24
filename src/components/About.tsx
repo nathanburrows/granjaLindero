@@ -59,6 +59,12 @@ function MissionModal({ onClose, tx }: { onClose: () => void; tx: AboutTx }) {
               )}
             </p>
           </div>
+          {/* Impact callout */}
+          <div className="bg-green-50 rounded-2xl px-5 py-4 flex items-center gap-4">
+            <div className="text-3xl font-serif font-bold text-green-700 flex-shrink-0">30%</div>
+            <p className="text-green-800 text-sm leading-snug">{tx.impactNote}</p>
+          </div>
+
           <div className="border-l-2 border-stone-200 pl-4">
             <p className="text-xs font-bold uppercase tracking-widest text-stone-400 mb-2">{tx.visionLabel}</p>
             <p className="text-stone-600 text-sm leading-relaxed">{tx.vision}</p>
