@@ -83,7 +83,7 @@ export default function Testimonials() {
                   &ldquo;{item.text}&rdquo;
                 </p>
                 <p className="mt-6 text-green-400 font-semibold text-sm uppercase tracking-widest">
-                  — {item.name}
+                  {item.name}
                 </p>
               </div>
             ))}
