@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useLang } from "@/lib/LangContext";
 import { t } from "@/lib/translations";
@@ -10,9 +10,11 @@ export default function Navbar() {
   const { lang, setLang } = useLang();
   const tx = t[lang].nav;
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [showBookModal, setShowBookModal] = useState(false);
+  const moreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -37,7 +39,37 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
-  const links = [
+  // Close More dropdown on outside click
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
+  const primaryLinks = [
+    { href: "#experiencias", label: tx.experiences },
+    { href: "#paquetes", label: tx.packages },
+    { href: "#hospedaje", label: tx.accommodation },
+    { href: "#restaurante", label: tx.restaurant },
+    { href: "#contacto", label: tx.contact },
+  ];
+
+  const faqLabel = lang === "en" ? "FAQ" : "Preguntas frecuentes";
+
+  const moreLinks = [
+    { href: "#nosotros", label: tx.about },
+    { href: "#tienda", label: tx.store },
+    { href: "#grupos", label: tx.groups },
+    { href: "#galeria", label: tx.gallery },
+    { href: "/faq", label: faqLabel, isPage: true },
+    { href: "/voluntarios", label: tx.volunteer, isPage: true },
+  ];
+
+  const allMobileLinks = [
     { href: "#nosotros", label: tx.about },
     { href: "#experiencias", label: tx.experiences },
     { href: "#paquetes", label: tx.packages },
@@ -47,6 +79,8 @@ export default function Navbar() {
     { href: "#grupos", label: tx.groups },
     { href: "#galeria", label: tx.gallery },
     { href: "#contacto", label: tx.contact },
+    { href: "/faq", label: faqLabel },
+    { href: "/voluntarios", label: tx.volunteer },
   ];
 
   return (
@@ -60,7 +94,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center group">
+        <a href="/" className="flex items-center group flex-shrink-0">
           <Image
             src="/images/logo.jpg"
             alt="La Granja Ecológica Lindero"
@@ -70,9 +104,9 @@ export default function Navbar() {
           />
         </a>
 
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-7">
-          {links.map((l) => {
+        {/* Desktop primary links */}
+        <div className="hidden md:flex items-center gap-6">
+          {primaryLinks.map((l) => {
             const isActive = activeSection === l.href.replace("#", "");
             return (
               <a
@@ -88,11 +122,43 @@ export default function Navbar() {
               </a>
             );
           })}
+
+          {/* More dropdown */}
+          <div className="relative" ref={moreRef}>
+            <button
+              onClick={() => setMoreOpen(!moreOpen)}
+              className="flex items-center gap-1 text-sm font-medium text-stone-300 hover:text-white transition-colors"
+            >
+              {tx.more}
+              <svg
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${moreOpen ? "rotate-180" : ""}`}
+                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {moreOpen && (
+              <div className="absolute top-full right-0 mt-2 w-52 bg-stone-900/98 backdrop-blur-md border border-white/10 rounded-xl shadow-xl overflow-hidden">
+                {moreLinks.map((l) => (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    onClick={() => setMoreOpen(false)}
+                    className={`block px-5 py-3 text-sm transition-colors hover:bg-white/10 ${
+                      l.isPage ? "text-green-400 font-medium" : "text-stone-300 hover:text-white"
+                    }`}
+                  >
+                    {l.label}
+                    {l.isPage && <span className="ml-1 opacity-60">↗</span>}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Right actions */}
-        <div className="hidden md:flex items-center gap-3">
-          {/* Language toggle */}
+        <div className="hidden md:flex items-center gap-3 flex-shrink-0">
           <div className="flex items-center bg-white/10 rounded-full p-0.5 text-xs font-semibold">
             <button
               onClick={() => setLang("es")}
@@ -126,30 +192,30 @@ export default function Navbar() {
 
         {/* Mobile menu button */}
         <button
-          onClick={() => setOpen(!open)}
+          onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden text-white p-2"
           aria-label="Menu"
         >
-          <div className={`w-6 h-0.5 bg-white mb-1.5 transition-all ${open ? "rotate-45 translate-y-2" : ""}`} />
-          <div className={`w-6 h-0.5 bg-white mb-1.5 transition-all ${open ? "opacity-0" : ""}`} />
-          <div className={`w-6 h-0.5 bg-white transition-all ${open ? "-rotate-45 -translate-y-2" : ""}`} />
+          <div className={`w-6 h-0.5 bg-white mb-1.5 transition-all ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <div className={`w-6 h-0.5 bg-white mb-1.5 transition-all ${mobileOpen ? "opacity-0" : ""}`} />
+          <div className={`w-6 h-0.5 bg-white transition-all ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
       </div>
 
       {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden bg-stone-900/98 backdrop-blur-md border-t border-white/10 px-6 py-4 flex flex-col gap-4">
-          {links.map((l) => (
+      {mobileOpen && (
+        <div className="md:hidden bg-stone-900/98 backdrop-blur-md border-t border-white/10 px-6 py-4 flex flex-col gap-1">
+          {allMobileLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              onClick={() => setOpen(false)}
-              className="text-stone-200 text-base font-medium py-1"
+              onClick={() => setMobileOpen(false)}
+              className="text-stone-200 text-base font-medium py-2.5 border-b border-white/5 last:border-0"
             >
               {l.label}
             </a>
           ))}
-          <div className="flex items-center gap-3 pt-2 border-t border-white/10">
+          <div className="flex items-center gap-3 pt-4">
             <div className="flex items-center bg-white/10 rounded-full p-0.5 text-xs font-semibold">
               <button
                 onClick={() => setLang("es")}
@@ -169,7 +235,7 @@ export default function Navbar() {
               </button>
             </div>
             <button
-              onClick={() => { setOpen(false); setShowBookModal(true); }}
+              onClick={() => { setMobileOpen(false); setShowBookModal(true); }}
               className="bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-full"
             >
               {tx.reserve}
