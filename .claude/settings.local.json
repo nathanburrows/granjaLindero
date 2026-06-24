@@ -4,7 +4,8 @@
       "mcp__Claude_in_Chrome__navigate",
       "mcp__Google_Drive__list_recent_files",
       "mcp__Google_Drive__search_files",
-      "Bash(cp \"/root/.claude/uploads/9c2863ab-4b36-5bf6-a07b-eeafbc3bd96e/523d2838-720trimedDJI.mp4\" /home/user/granjaLindero/public/images/hero-bg.mp4)"
+      "Bash(cp \"/root/.claude/uploads/9c2863ab-4b36-5bf6-a07b-eeafbc3bd96e/523d2838-720trimedDJI.mp4\" /home/user/granjaLindero/public/images/hero-bg.mp4)",
+      "Bash(cp \"/root/.claude/uploads/9c2863ab-4b36-5bf6-a07b-eeafbc3bd96e/6e6692f0-DJI_0166full1.mp4\" /home/user/granjaLindero/public/video/hero-bg.mp4)"
     ]
   }
 }
