@@ -346,9 +346,86 @@ export const t = {
       hours: "Horarios de atención",
       hoursDetail: "Miércoles a Domingo · 9:00 am – 5:30 pm",
     },
+    testimonials: {
+      label: "Lo que dicen nuestros visitantes",
+      title: "Experiencias reales",
+      items: [
+        {
+          name: "Maleah",
+          stars: 5,
+          text: "Una joya escondida. Comida deliciosa directamente de la granja. Comí las 3 comidas aquí y cada una es deliciosa y fresca. El personal es cálido y amable, y disfrutan enseñarte sobre la vida en la granja. ¡Totalmente recomendado!",
+        },
+        {
+          name: "María",
+          stars: 5,
+          text: "Una experiencia increíble en La Granja Ecológica Lindero. Comida casera deliciosa con ingredientes orgánicos, lácteos artesanales de gran calidad y animales bien cuidados en libertad. El dormitorio es sencillo pero muy cómodo y limpio. Ideal para desconectar, aprender y disfrutar de la naturaleza. ¡Muy recomendable!",
+        },
+        {
+          name: "Ximena",
+          stars: 5,
+          text: "La gente muy amable. Consumimos en el restaurante y tuvimos acceso a la granja. Pedimos chancho, pollo y trucha frita y estuvieron muy buenos. La leche asada estuvo muy rica. Sin mencionar los adorables perritos que nos acompañaban.",
+        },
+        {
+          name: "LG",
+          stars: 5,
+          text: "Lindo lugar para quedarse y pasar unos días. Los anfitriones te hacen sentir como en casa. Te alojas en una linda casona antigua. El desayuno insuperable, todo de producción de la granja. Riquísima pachamanca.",
+        },
+        {
+          name: "Martin",
+          stars: 5,
+          text: "Super experiencia. El lugar está magnificamente acondicionado, el personal es muy acogedor y la cocina con productos de la granja es deliciosa. ¡Lo recomiendo ampliamente!",
+        },
+        {
+          name: "Ana",
+          stars: 5,
+          text: "Un lugar para desconectarte y descansar, solo o en familia. La comida deliciosa y el equipo de servicio muy amable. Además, si tienes curiosidad sobre el cuidado de animales o plantas, puedes aprender con el apoyo de los encargados.",
+        },
+        {
+          name: "Diana",
+          stars: 5,
+          text: "Muy bonito recreo tipo granja con animales. Gran variedad de plantas en su vivero. Bonito lugar para relajarse en la naturaleza. Venden productos lácteos y leche de vaca.",
+        },
+      ],
+    },
+    faq: {
+      label: "Preguntas frecuentes",
+      title: "Todo lo que necesitas saber",
+      subtitle: "¿Tienes dudas? Aquí respondemos las preguntas más comunes. Si no encuentras lo que buscas, escríbenos por WhatsApp.",
+      items: [
+        {
+          q: "¿Cuál es el horario de atención?",
+          a: "Atendemos de miércoles a domingo de 9:00 am a 5:30 pm. Para grupos corporativos o eventos especiales podemos coordinar fechas fuera de este horario.",
+        },
+        {
+          q: "¿Dónde están ubicados?",
+          a: "Estamos en la Carretera a Ambo km 2, a 10 minutos del centro de Huánuco, en el distrito de Tomaykichwa.",
+        },
+        {
+          q: "¿Cómo puedo hacer una reserva?",
+          a: "Puedes reservar directamente por WhatsApp al +51 966 721 057. Para grupos de más de 10 personas te recomendamos reservar con al menos 3 días de anticipación.",
+        },
+        {
+          q: "¿Qué incluye el paquete Half-Day?",
+          a: "El paquete Half-Day incluye el tour vivencial con animales y un almuerzo típico de la región. Dura aproximadamente 4 horas.",
+        },
+        {
+          q: "¿Aceptan niños pequeños?",
+          a: "¡Por supuesto! La granja está diseñada para toda la familia. Los niños disfrutan especialmente del contacto con los animales y las actividades en el huerto.",
+        },
+        {
+          q: "¿Hay estacionamiento disponible?",
+          a: "Sí, contamos con estacionamiento gratuito dentro de la granja.",
+        },
+        {
+          q: "¿Aceptan tarjetas de crédito o solo efectivo?",
+          a: "Aceptamos pagos en efectivo (soles). Para grupos o reservas anticipadas también puedes coordinar una transferencia bancaria.",
+        },
+      ],
+    },
     footer: {
       tagline: "Reconecta con la naturaleza en Huánuco, Perú.",
       rights: "Todos los derechos reservados.",
+      faq: "Preguntas frecuentes",
     },
   },
   en: {
@@ -697,9 +774,86 @@ export const t = {
       hours: "Opening hours",
       hoursDetail: "Wednesday to Sunday · 9:00 am – 5:30 pm",
     },
+    testimonials: {
+      label: "What our visitors say",
+      title: "Real experiences",
+      items: [
+        {
+          name: "Maleah",
+          stars: 5,
+          text: "A hidden gem. Delicious food straight from the farm. I have eaten all 3 meals here and each are delicious and fresh! The staff is warm and welcoming, and love to teach you about life on the farm. Highly recommend!",
+        },
+        {
+          name: "María",
+          stars: 5,
+          text: "An incredible experience at Lindero Organic Farm. Delicious homemade food with organic ingredients, high-quality artisanal dairy products, and well-cared-for animals roaming freely. The dormitory is simple but very comfortable and clean. Ideal for disconnecting, learning, and enjoying nature. Highly recommended!",
+        },
+        {
+          name: "Ximena",
+          stars: 5,
+          text: "Very friendly staff. We dined at the restaurant and had access to the farm. We ordered pork, chicken and fried trout — all delicious. The roasted milk was amazing. Not to mention the adorable dogs that kept us company!",
+        },
+        {
+          name: "LG",
+          stars: 5,
+          text: "A lovely place to stay for a few days. The hosts make you feel right at home in a beautiful old farmhouse. Breakfast was unbeatable — everything straight from the farm. The pachamanca was absolutely delicious.",
+        },
+        {
+          name: "Martin",
+          stars: 5,
+          text: "Super experience. The place is beautifully set up, the staff is very welcoming and the farm-to-table cuisine is delicious. Highly recommend!",
+        },
+        {
+          name: "Ana",
+          stars: 5,
+          text: "A place to unplug and rest, alone or with family. Delicious food and a very friendly team. And if you're curious about animal or plant care, you can learn with guidance from the staff.",
+        },
+        {
+          name: "Diana",
+          stars: 5,
+          text: "A beautiful farm-style retreat with animals. A great variety of plants in the nursery. A lovely spot to relax in nature. They also sell dairy products and fresh cow's milk.",
+        },
+      ],
+    },
+    faq: {
+      label: "FAQ",
+      title: "Everything you need to know",
+      subtitle: "Have questions? Here are the most common ones. If you can't find what you're looking for, message us on WhatsApp.",
+      items: [
+        {
+          q: "What are your opening hours?",
+          a: "We are open Wednesday through Sunday from 9:00 am to 5:30 pm. For corporate groups or special events we can arrange visits outside these hours.",
+        },
+        {
+          q: "Where are you located?",
+          a: "We are on the Ambo Highway km 2, 10 minutes from downtown Huánuco, in the Tomaykichwa district.",
+        },
+        {
+          q: "How do I make a reservation?",
+          a: "You can book directly via WhatsApp at +51 966 721 057. For groups of more than 10 people, we recommend booking at least 3 days in advance.",
+        },
+        {
+          q: "What is included in the Half-Day package?",
+          a: "The Half-Day package includes the farm animal tour and a traditional regional lunch. It lasts approximately 4 hours.",
+        },
+        {
+          q: "Is it suitable for young children?",
+          a: "Absolutely! The farm is designed for the whole family. Children especially love interacting with the animals and working in the garden.",
+        },
+        {
+          q: "Is parking available?",
+          a: "Yes, we have free parking inside the farm.",
+        },
+        {
+          q: "Do you accept credit cards or only cash?",
+          a: "We accept cash payments (Peruvian soles). For groups or advance bookings you can also arrange a bank transfer.",
+        },
+      ],
+    },
     footer: {
       tagline: "Reconnect with nature in Huánuco, Peru.",
       rights: "All rights reserved.",
+      faq: "FAQ",
     },
   },
 };

@@ -12,6 +12,7 @@ import FarmStore from "@/components/FarmStore";
 import Groups from "@/components/Groups";
 import Gallery from "@/components/Gallery";
 import Location from "@/components/Location";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -30,6 +31,7 @@ export default function Home() {
         <Groups />
         <Gallery />
         <Location />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />

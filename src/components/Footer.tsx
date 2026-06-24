@@ -49,6 +49,7 @@ export default function Footer() {
                 { href: "#tienda", label: nav.store },
                 { href: "#galeria", label: nav.gallery },
                 { href: "#contacto", label: nav.contact },
+                { href: "/faq", label: tx.faq },
               ].map((l) => (
                 <li key={l.href}>
                   <a href={l.href} className="hover:text-white transition-colors">
