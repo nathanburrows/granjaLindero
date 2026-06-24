@@ -42,13 +42,13 @@ export default function Footer() {
             </div>
             <ul className="space-y-2 text-sm">
               {[
-                { href: "#nosotros", label: nav.about },
-                { href: "#experiencias", label: nav.experiences },
-                { href: "#hospedaje", label: nav.accommodation },
-                { href: "#restaurante", label: nav.restaurant },
-                { href: "#tienda", label: nav.store },
-                { href: "#galeria", label: nav.gallery },
-                { href: "#contacto", label: nav.contact },
+                { href: "/#nosotros", label: nav.about },
+                { href: "/#experiencias", label: nav.experiences },
+                { href: "/#hospedaje", label: nav.accommodation },
+                { href: "/#restaurante", label: nav.restaurant },
+                { href: "/#tienda", label: nav.store },
+                { href: "/#galeria", label: nav.gallery },
+                { href: "/#contacto", label: nav.contact },
                 { href: "/faq", label: tx.faq },
                 { href: "/voluntarios", label: tx.volunteer },
               ].map((l) => (

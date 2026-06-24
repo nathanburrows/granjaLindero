@@ -51,34 +51,34 @@ export default function Navbar() {
   }, []);
 
   const primaryLinks = [
-    { href: "#experiencias", label: tx.experiences },
-    { href: "#paquetes", label: tx.packages },
-    { href: "#hospedaje", label: tx.accommodation },
-    { href: "#restaurante", label: tx.restaurant },
-    { href: "#grupos", label: tx.groups },
-    { href: "#contacto", label: tx.contact },
+    { href: "/#experiencias", label: tx.experiences },
+    { href: "/#paquetes", label: tx.packages },
+    { href: "/#hospedaje", label: tx.accommodation },
+    { href: "/#restaurante", label: tx.restaurant },
+    { href: "/#grupos", label: tx.groups },
+    { href: "/#contacto", label: tx.contact },
   ];
 
   const faqLabel = lang === "en" ? "FAQ" : "Preguntas frecuentes";
 
   const moreLinks = [
-    { href: "#nosotros", label: tx.about },
-    { href: "#tienda", label: tx.store },
-    { href: "#galeria", label: tx.gallery },
+    { href: "/#nosotros", label: tx.about },
+    { href: "/#tienda", label: tx.store },
+    { href: "/#galeria", label: tx.gallery },
     { href: "/faq", label: faqLabel, isPage: true },
     { href: "/voluntarios", label: tx.volunteer, isPage: true },
   ];
 
   const allMobileLinks = [
-    { href: "#nosotros", label: tx.about },
-    { href: "#experiencias", label: tx.experiences },
-    { href: "#paquetes", label: tx.packages },
-    { href: "#hospedaje", label: tx.accommodation },
-    { href: "#restaurante", label: tx.restaurant },
-    { href: "#tienda", label: tx.store },
-    { href: "#grupos", label: tx.groups },
-    { href: "#galeria", label: tx.gallery },
-    { href: "#contacto", label: tx.contact },
+    { href: "/#nosotros", label: tx.about },
+    { href: "/#experiencias", label: tx.experiences },
+    { href: "/#paquetes", label: tx.packages },
+    { href: "/#hospedaje", label: tx.accommodation },
+    { href: "/#restaurante", label: tx.restaurant },
+    { href: "/#tienda", label: tx.store },
+    { href: "/#grupos", label: tx.groups },
+    { href: "/#galeria", label: tx.gallery },
+    { href: "/#contacto", label: tx.contact },
     { href: "/faq", label: faqLabel },
     { href: "/voluntarios", label: tx.volunteer },
   ];
@@ -107,7 +107,7 @@ export default function Navbar() {
         {/* Desktop primary links */}
         <div className="hidden md:flex items-center gap-6">
           {primaryLinks.map((l) => {
-            const isActive = activeSection === l.href.replace("#", "");
+            const isActive = activeSection === l.href.replace("/#", "");
             return (
               <a
                 key={l.href}
