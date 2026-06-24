@@ -395,6 +395,11 @@ export const t = {
           stars: 5,
           text: "Bonito campo para diversión :)",
         },
+        {
+          name: "Liliana",
+          stars: 5,
+          text: "Muy buenos los yogurt, manjarblanco y bien cuidado. Recomendable para ir con la familia.",
+        },
       ],
     },
     faq: {
@@ -832,6 +837,11 @@ export const t = {
           name: "Scott",
           stars: 5,
           text: "Beautiful countryside for fun :)",
+        },
+        {
+          name: "Liliana",
+          stars: 5,
+          text: "Excellent yogurt and manjarblanco, and well kept. Highly recommended for a family outing.",
         },
       ],
     },
