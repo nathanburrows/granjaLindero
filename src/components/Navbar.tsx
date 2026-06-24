@@ -60,7 +60,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center group">
+        <a href="/" className="flex items-center group">
           <Image
             src="/images/logo.jpg"
             alt="La Granja Ecológica Lindero"
