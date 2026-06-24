@@ -408,12 +408,24 @@ export const t = {
       subtitle: "¿Tienes dudas? Aquí respondemos las preguntas más comunes. Si no encuentras lo que buscas, escríbenos por WhatsApp.",
       items: [
         {
-          q: "¿Cuál es el horario de atención?",
+          q: "¿Cuál es el horario de atención de La Granja Ecológica Lindero?",
           a: "Atendemos de miércoles a domingo de 9:00 am a 5:30 pm. Para grupos corporativos o eventos especiales podemos coordinar fechas fuera de este horario.",
         },
         {
-          q: "¿Dónde están ubicados?",
-          a: "Estamos en la Carretera a Ambo km 2, a 10 minutos del centro de Huánuco, en el distrito de Tomaykichwa.",
+          q: "¿Qué operadores móviles tienen señal en la granja?",
+          a: "Cuentan con señal los operadores BITEL, MOVISTAR y CLARO.",
+        },
+        {
+          q: "¿Cuál es el costo de entrada?",
+          a: "Tarifa general: S/ 10 soles. Niños (5 a 11 años): S/ 5 soles. Exentos de pago: niños menores de 5 años y personas con carnet CONADIS vigente.",
+        },
+        {
+          q: "¿Ofrecen descuentos?",
+          a: "No aplicamos descuentos para estudiantes universitarios, docentes ni adultos mayores. Los precios de los paquetes ya incluyen todas las actividades correspondientes.",
+        },
+        {
+          q: "¿Cómo llegar a La Granja Ecológica Lindero?",
+          a: "Estamos ubicados en la Carretera a Ambo km 2, a solo 10 minutos del centro de Huánuco, en el distrito de Tomaykichwa. Puedes llegar en auto particular, transporte público (colectivos hacia Ambo) o coordinar con nosotros un servicio de transporte privado.",
         },
         {
           q: "¿Cómo puedo hacer una reserva?",
@@ -428,12 +440,20 @@ export const t = {
           a: "¡Por supuesto! La granja está diseñada para toda la familia. Los niños disfrutan especialmente del contacto con los animales y las actividades en el huerto.",
         },
         {
+          q: "¿Qué ropa debo llevar?",
+          a: "Recomendamos ropa abrigadora, zapatos cómodos para caminar, impermeable (especialmente entre octubre y abril) y bloqueador solar. La zona puede ser fresca, especialmente en las mañanas y tardes.",
+        },
+        {
           q: "¿Hay estacionamiento disponible?",
-          a: "Sí, contamos con estacionamiento gratuito dentro de la granja.",
+          a: "Sí, contamos con estacionamiento gratuito y seguro dentro de la granja para todo tipo de vehículos.",
         },
         {
           q: "¿Aceptan tarjetas de crédito o solo efectivo?",
           a: "Aceptamos pagos en efectivo (soles). Para grupos o reservas anticipadas también puedes coordinar una transferencia bancaria.",
+        },
+        {
+          q: "¿Se permiten mascotas?",
+          a: "No. Por la seguridad de nuestra fauna y animales de granja, no se permite el ingreso de mascotas a ninguna área de La Granja Ecológica Lindero, incluyendo hospedaje, restaurante y áreas comunes.",
         },
       ],
     },
@@ -851,12 +871,24 @@ export const t = {
       subtitle: "Have questions? Here are the most common ones. If you can't find what you're looking for, message us on WhatsApp.",
       items: [
         {
-          q: "What are your opening hours?",
+          q: "What are the opening hours at La Granja Ecológica Lindero?",
           a: "We are open Wednesday through Sunday from 9:00 am to 5:30 pm. For corporate groups or special events we can arrange visits outside these hours.",
         },
         {
-          q: "Where are you located?",
-          a: "We are on the Ambo Highway km 2, 10 minutes from downtown Huánuco, in the Tomaykichwa district.",
+          q: "Which mobile networks have coverage at the farm?",
+          a: "BITEL, MOVISTAR, and CLARO all have signal at the farm.",
+        },
+        {
+          q: "What is the entrance fee?",
+          a: "General rate: S/ 10 soles. Children (5 to 11 years): S/ 5 soles. Free entry: children under 5 years old and visitors with a valid CONADIS card.",
+        },
+        {
+          q: "Do you offer any discounts?",
+          a: "Discounts for university students, teachers, or seniors do not apply. Our package prices already include all corresponding activities.",
+        },
+        {
+          q: "How do I get to La Granja Ecológica Lindero?",
+          a: "We are located on the Ambo Highway km 2, just 10 minutes from downtown Huánuco, in the Tomaykichwa district. You can arrive by private car, public transport (shared vans toward Ambo), or contact us to arrange private transportation.",
         },
         {
           q: "How do I make a reservation?",
@@ -871,12 +903,20 @@ export const t = {
           a: "Absolutely! The farm is designed for the whole family. Children especially love interacting with the animals and working in the garden.",
         },
         {
+          q: "What should I wear?",
+          a: "We recommend warm clothing, comfortable walking shoes, a raincoat (especially between October and April), and sunscreen. The area can be cool, particularly in the mornings and evenings.",
+        },
+        {
           q: "Is parking available?",
-          a: "Yes, we have free parking inside the farm.",
+          a: "Yes, we have free, secure parking inside the farm for all types of vehicles.",
         },
         {
           q: "Do you accept credit cards or only cash?",
           a: "We accept cash payments (Peruvian soles). For groups or advance bookings you can also arrange a bank transfer.",
+        },
+        {
+          q: "Are pets allowed?",
+          a: "No. For the safety of our wildlife and farm animals, pets are not permitted in any area of La Granja Ecológica Lindero, including lodging, the restaurant, and all common areas.",
         },
       ],
     },
