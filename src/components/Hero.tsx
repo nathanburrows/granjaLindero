@@ -1,19 +1,46 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { useLang } from "@/lib/LangContext";
 import { t } from "@/lib/translations";
 
 export default function Hero() {
   const { lang } = useLang();
   const tx = t[lang].hero;
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [fading, setFading] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const FADE_DURATION = 1500; // ms before end to start fade
+
+    const onTimeUpdate = () => {
+      if (!video.duration) return;
+      const remaining = (video.duration - video.currentTime) * 1000;
+      if (remaining <= FADE_DURATION && !fading) {
+        setFading(true);
+        setTimeout(() => {
+          video.currentTime = 0;
+          video.play();
+          setFading(false);
+        }, FADE_DURATION);
+      }
+    };
+
+    video.addEventListener("timeupdate", onTimeUpdate);
+    return () => video.removeEventListener("timeupdate", onTimeUpdate);
+  }, [fading]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background video */}
       <video
-        className="absolute inset-0 w-full h-full object-cover"
+        ref={videoRef}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ${fading ? "opacity-0" : "opacity-100"}`}
         src="/video/hero-bg.mp4"
         autoPlay
-        loop
         muted
         playsInline
       />
