@@ -55,6 +55,7 @@ export default function Navbar() {
     { href: "#paquetes", label: tx.packages },
     { href: "#hospedaje", label: tx.accommodation },
     { href: "#restaurante", label: tx.restaurant },
+    { href: "#grupos", label: tx.groups },
     { href: "#contacto", label: tx.contact },
   ];
 
@@ -63,7 +64,6 @@ export default function Navbar() {
   const moreLinks = [
     { href: "#nosotros", label: tx.about },
     { href: "#tienda", label: tx.store },
-    { href: "#grupos", label: tx.groups },
     { href: "#galeria", label: tx.gallery },
     { href: "/faq", label: faqLabel, isPage: true },
     { href: "/voluntarios", label: tx.volunteer, isPage: true },
