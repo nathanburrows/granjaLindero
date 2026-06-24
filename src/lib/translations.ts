@@ -385,6 +385,11 @@ export const t = {
           stars: 5,
           text: "Muy bonito recreo tipo granja con animales. Gran variedad de plantas en su vivero. Bonito lugar para relajarse en la naturaleza. Venden productos lácteos y leche de vaca.",
         },
+        {
+          name: "Nick",
+          stars: 5,
+          text: "¡Comida fantástica y un ambiente increíble! Lo recomiendo muchísimo si visitas Huánuco.",
+        },
       ],
     },
     faq: {
@@ -812,6 +817,11 @@ export const t = {
           name: "Diana",
           stars: 5,
           text: "A beautiful farm-style retreat with animals. A great variety of plants in the nursery. A lovely spot to relax in nature. They also sell dairy products and fresh cow's milk.",
+        },
+        {
+          name: "Nick",
+          stars: 5,
+          text: "Fantastic food and awesome environment! Highly highly recommend if you are visiting Huánuco!",
         },
       ],
     },
