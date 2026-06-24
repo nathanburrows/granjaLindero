@@ -390,6 +390,11 @@ export const t = {
           stars: 5,
           text: "¡Comida fantástica y un ambiente increíble! Lo recomiendo muchísimo si visitas Huánuco.",
         },
+        {
+          name: "Scott",
+          stars: 5,
+          text: "Bonito campo para diversión :)",
+        },
       ],
     },
     faq: {
@@ -822,6 +827,11 @@ export const t = {
           name: "Nick",
           stars: 5,
           text: "Fantastic food and awesome environment! Highly highly recommend if you are visiting Huánuco!",
+        },
+        {
+          name: "Scott",
+          stars: 5,
+          text: "Beautiful countryside for fun :)",
         },
       ],
     },
