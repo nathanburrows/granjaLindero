@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLang } from "@/lib/LangContext";
 import { t } from "@/lib/translations";
 
-const FADE_MS = 3000;
+const FADE_MS = 1500;
 
 export default function Hero() {
   const { lang } = useLang();
@@ -32,21 +32,14 @@ export default function Hero() {
       }, FADE_MS);
     }
 
-    function onATime() {
-      if (!a!.duration) return;
-      if ((a!.duration - a!.currentTime) * 1000 <= FADE_MS) crossfade(a!, b!, false);
-    }
+    const onAEnd = () => crossfade(a!, b!, false);
+    const onBEnd = () => crossfade(b!, a!, true);
 
-    function onBTime() {
-      if (!b!.duration) return;
-      if ((b!.duration - b!.currentTime) * 1000 <= FADE_MS) crossfade(b!, a!, true);
-    }
-
-    a.addEventListener("timeupdate", onATime);
-    b.addEventListener("timeupdate", onBTime);
+    a.addEventListener("ended", onAEnd);
+    b.addEventListener("ended", onBEnd);
     return () => {
-      a.removeEventListener("timeupdate", onATime);
-      b.removeEventListener("timeupdate", onBTime);
+      a.removeEventListener("ended", onAEnd);
+      b.removeEventListener("ended", onBEnd);
     };
   }, []);
 
@@ -54,7 +47,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <video
         ref={vidA}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[3000ms] ${aOnTop ? "opacity-100 z-0" : "opacity-0 -z-10"}`}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ${aOnTop ? "opacity-100 z-0" : "opacity-0 -z-10"}`}
         src="/video/hero-bg.mp4"
         autoPlay
         muted
@@ -62,7 +55,7 @@ export default function Hero() {
       />
       <video
         ref={vidB}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[3000ms] ${aOnTop ? "opacity-0 -z-10" : "opacity-100 z-0"}`}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ${aOnTop ? "opacity-0 -z-10" : "opacity-100 z-0"}`}
         src="/video/hero-bg.mp4"
         muted
         playsInline
