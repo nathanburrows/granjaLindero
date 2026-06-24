@@ -417,7 +417,7 @@ export const t = {
         },
         {
           q: "¿Cuál es el costo de entrada?",
-          a: "Tarifa general: S/ 10 soles. Niños (5 a 11 años): S/ 5 soles. Exentos de pago: niños menores de 5 años y personas con carnet CONADIS vigente.",
+          a: "¡El ingreso a La Granja Ecológica Lindero es gratuito! Solo se cobra una tarifa por el estacionamiento. Para conocer el costo actualizado, escríbenos por WhatsApp antes de tu visita.",
         },
         {
           q: "¿Ofrecen descuentos?",
@@ -445,11 +445,11 @@ export const t = {
         },
         {
           q: "¿Hay estacionamiento disponible?",
-          a: "Sí, contamos con estacionamiento gratuito y seguro dentro de la granja para todo tipo de vehículos.",
+          a: "Sí, contamos con estacionamiento seguro dentro de la granja para todo tipo de vehículos. Se cobra una tarifa por el estacionamiento — consúltanos por WhatsApp para el costo actualizado.",
         },
         {
           q: "¿Aceptan tarjetas de crédito o solo efectivo?",
-          a: "Aceptamos pagos en efectivo (soles). Para grupos o reservas anticipadas también puedes coordinar una transferencia bancaria.",
+          a: "Aceptamos Yape y efectivo (soles) en el lugar. Para grupos grandes también podemos coordinar transferencia bancaria o PayPal con anticipación.",
         },
         {
           q: "¿Se permiten mascotas?",
@@ -880,7 +880,7 @@ export const t = {
         },
         {
           q: "What is the entrance fee?",
-          a: "General rate: S/ 10 soles. Children (5 to 11 years): S/ 5 soles. Free entry: children under 5 years old and visitors with a valid CONADIS card.",
+          a: "Admission to La Granja Ecológica Lindero is free! There is a separate fee for parking. Message us on WhatsApp before your visit for the current rate.",
         },
         {
           q: "Do you offer any discounts?",
@@ -908,11 +908,11 @@ export const t = {
         },
         {
           q: "Is parking available?",
-          a: "Yes, we have free, secure parking inside the farm for all types of vehicles.",
+          a: "Yes, secure parking is available inside the farm for all types of vehicles. A parking fee applies — contact us on WhatsApp for the current rate.",
         },
         {
           q: "Do you accept credit cards or only cash?",
-          a: "We accept cash payments (Peruvian soles). For groups or advance bookings you can also arrange a bank transfer.",
+          a: "We accept Yape and cash (Peruvian soles) on-site. For larger groups, we can also arrange bank transfer or PayPal — just reach out in advance.",
         },
         {
           q: "Are pets allowed?",
