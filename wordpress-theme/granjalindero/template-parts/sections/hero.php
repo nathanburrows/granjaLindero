@@ -6,7 +6,7 @@ $cta_exp  = get_field('hero_cta_exp')  ?: ($is_es ? 'Reservar experiencia' : 'Bo
 $cta_room = get_field('hero_cta_room') ?: ($is_es ? 'Reservar habitación' : 'Book a room');
 $badge    = get_field('hero_badge')    ?: 'Tomaykichwa · Huánuco · Perú';
 $video    = get_field('hero_video');
-$video_url = $video ? $video['url'] : get_template_directory_uri() . '/assets/images/hero-bg.mp4';
+$video_url = $video ? $video['url'] : get_template_directory_uri() . '/assets/video/hero-bg.mp4';
 ?>
 <section class="hero" id="inicio">
   <video id="hero-vid-a" class="hero-video on-top" src="<?php echo esc_url($video_url); ?>" autoplay muted playsinline></video>
