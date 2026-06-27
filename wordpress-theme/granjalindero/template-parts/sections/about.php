@@ -47,7 +47,6 @@ $vision_label  = $is_es ? 'Visión'  : 'Vision';
       <div class="about-collage">
         <div class="about-img-back"  style="background-image:url('<?php echo esc_url($img_back); ?>')"></div>
         <div class="about-img-front" style="background-image:url('<?php echo esc_url($img_front); ?>')"></div>
-        <div class="about-deco"></div>
       </div>
 
     </div>

@@ -12,6 +12,14 @@ $note       = gl_field('pkg_note') ?: ($is_es
     ? 'Precios en Soles peruanos (S/). Consulta disponibilidad por WhatsApp.'
     : 'Prices in Peruvian Soles (S/). Ask about availability on WhatsApp.');
 
+$img = get_template_directory_uri() . '/assets/images/';
+$pkg_photos = [
+    [$img.'animales_alpacas.jpg',         $img.'restaurant_juane_plato.jpg',       $img.'actividades_cosecha_huerto.jpg'],
+    [$img.'paisaje_sendero_montana.jpg',   $img.'restaurant_pachamanca.jpg',        $img.'animales_cuyes.jpg'],
+    [$img.'hospedaje_cabana_bosque.jpg',   $img.'experiencias_fogon_noche.jpg',     $img.'hospedaje_habitacion_doble.jpg'],
+    [$img.'experiencias_jardin_gazebo.jpg',$img.'experiencias_cuyes_granja.jpg',    $img.'hospedaje_edificio_principal.jpg'],
+];
+
 $packages = gl_field('pkg_items') ?: [];
 if (empty($packages)) {
     $packages = $is_es ? [
@@ -19,50 +27,42 @@ if (empty($packages)) {
             'name'=>'Half-Day', 'price'=>'S/40', 'highlight'=>false,
             'tagline'=>'La experiencia perfecta para una mañana', 'min_people'=>5,
             'includes'=>["Tour Animal Friends o Circuito Ecológico","Interacción con animales de la granja","Degustación de productos lácteos","Almuerzo: plato típico de la región"],
-            'image_url'=>'',
         ],
         [
             'name'=>'Full-Day', 'price'=>'S/55', 'highlight'=>true,
             'tagline'=>'El día completo en la granja', 'min_people'=>5,
             'includes'=>["Tour Animal Friends","Tour Circuito Ecológico","Interacción con animales + degustación láctea","Almuerzo: plato típico de la región","Llévate una plantita del circuito"],
-            'image_url'=>'',
         ],
         [
             'name'=>'2 Días / 1 Noche', 'price'=>'S/200', 'highlight'=>false,
             'tagline'=>'Una escapada completa en la naturaleza', 'min_people'=>2,
             'includes'=>["Tour Animal Friends + degustación láctea","Taller Conexión Verde (horticultura terapéutica)","Tour Circuito Ecológico","2 almuerzos + 1 cena + 1 desayuno","1 noche de hospedaje","Noche de fogón bajo las estrellas"],
-            'image_url'=>'',
         ],
         [
             'name'=>'3 Días / 2 Noches', 'price'=>'S/310', 'highlight'=>false,
             'tagline'=>'La experiencia completa de Huánuco', 'min_people'=>2,
             'includes'=>["Todo lo incluido en 2D/1N","Visita a la Hacienda Cachigaga","Recorrido por atractivos turísticos cercanos","3 almuerzos + 2 cenas + 2 desayunos","2 noches de hospedaje","Actividades recreativas libres"],
-            'image_url'=>'',
         ],
     ] : [
         [
             'name'=>'Half-Day', 'price'=>'S/40', 'highlight'=>false,
             'tagline'=>'The perfect experience for a morning', 'min_people'=>5,
             'includes'=>["Animal Friends Tour or Ecological Circuit Tour","Farm animal interaction","Dairy product tasting","Lunch: traditional regional dish"],
-            'image_url'=>'',
         ],
         [
             'name'=>'Full-Day', 'price'=>'S/55', 'highlight'=>true,
             'tagline'=>'A full day on the farm', 'min_people'=>5,
             'includes'=>["Animal Friends Tour","Ecological Circuit Tour","Animal interaction + dairy tasting","Lunch: traditional regional dish","Take home a seedling"],
-            'image_url'=>'',
         ],
         [
             'name'=>'2 Days / 1 Night', 'price'=>'S/200', 'highlight'=>false,
             'tagline'=>'A complete nature getaway', 'min_people'=>2,
             'includes'=>["Animal Friends Tour + dairy tasting","Conexión Verde Workshop (therapeutic horticulture)","Ecological Circuit Tour","2 lunches + 1 dinner + 1 breakfast","1 night lodging","Campfire night under the stars"],
-            'image_url'=>'',
         ],
         [
             'name'=>'3 Days / 2 Nights', 'price'=>'S/310', 'highlight'=>false,
             'tagline'=>'The complete Huánuco experience', 'min_people'=>2,
             'includes'=>["Everything in 2D/1N","Visit to Hacienda Cachigaga","Nearby tourist attractions tour","3 lunches + 2 dinners + 2 breakfasts","2 nights lodging","Free recreational activities"],
-            'image_url'=>'',
         ],
     ];
 }
@@ -79,20 +79,22 @@ $wa_num = get_option('gl_wa_number', '51966721057');
     </div>
 
     <div class="packages-grid">
-      <?php foreach ($packages as $pkg):
+      <?php foreach ($packages as $i => $pkg):
         $is_highlight = !empty($pkg['highlight']);
-        $bg_style = !empty($pkg['image_url'])
-            ? 'background-image:url(' . esc_url($pkg['image_url']) . ')'
-            : 'background:' . ($is_highlight ? 'var(--green-700)' : 'var(--stone-800)');
         $min_p = intval($pkg['min_people'] ?? 1);
+        $photos = $pkg_photos[$i] ?? [];
         $msg = $is_es
             ? "Hola, me interesa reservar el Paquete {$pkg['name']} ({$pkg['price']}/persona). ¿Pueden confirmar disponibilidad?"
             : "Hi, I'd like to book the {$pkg['name']} Package ({$pkg['price']}/person). Can you confirm availability?";
         $wa = gl_wa_url($msg);
       ?>
       <div class="pkg-card<?php echo $is_highlight ? ' pkg-card--highlight' : ''; ?>" style="<?php echo $is_highlight ? 'border-color:var(--green-600);box-shadow:0 12px 48px rgba(22,163,74,.25)' : ''; ?>">
-        <?php if (!empty($pkg['image_url'])): ?>
-        <div class="pkg-img" style="<?php echo $bg_style; ?>"></div>
+        <?php if (!empty($photos)): ?>
+        <div class="pkg-photos">
+          <?php foreach ($photos as $ph): ?>
+          <div class="pkg-photo" style="background-image:url('<?php echo esc_url($ph); ?>')"></div>
+          <?php endforeach; ?>
+        </div>
         <?php endif; ?>
         <div class="pkg-body">
           <span class="pkg-badge"><?php echo esc_html($pkg['tagline'] ?? $pkg['name']); ?></span>
