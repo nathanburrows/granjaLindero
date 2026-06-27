@@ -15,6 +15,41 @@ function gl_rows($key, $post_id = false) {
     return function_exists('have_rows') ? have_rows($key, $post_id) : false;
 }
 
+// ── First-run page setup ───────────────────────────────────
+add_action('after_switch_theme', 'gl_setup_pages');
+function gl_setup_pages() {
+    $pages = [
+        'home'        => ['title' => 'Home',        'template' => ''],
+        'faq'         => ['title' => 'FAQ',          'template' => 'page-faq.php'],
+        'voluntarios' => ['title' => 'Voluntarios',  'template' => 'page-voluntarios.php'],
+    ];
+
+    $home_id = 0;
+    foreach ($pages as $slug => $cfg) {
+        $existing = get_page_by_path($slug);
+        if ($existing) {
+            if ($slug === 'home') $home_id = $existing->ID;
+            continue;
+        }
+        $id = wp_insert_post([
+            'post_title'   => $cfg['title'],
+            'post_name'    => $slug,
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'post_content' => '',
+        ]);
+        if (!is_wp_error($id)) {
+            if ($cfg['template']) update_post_meta($id, '_wp_page_template', $cfg['template']);
+            if ($slug === 'home') $home_id = $id;
+        }
+    }
+
+    if ($home_id) {
+        update_option('page_on_front', $home_id);
+        update_option('show_on_front', 'page');
+    }
+}
+
 // ── Theme setup ────────────────────────────────────────────
 add_action('after_setup_theme', function () {
     add_theme_support('title-tag');
