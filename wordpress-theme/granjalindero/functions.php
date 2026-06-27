@@ -18,34 +18,47 @@ function gl_rows($key, $post_id = false) {
 // ── First-run page setup ───────────────────────────────────
 add_action('init', 'gl_setup_pages');
 function gl_setup_pages() {
-    if (get_option('gl_pages_v2_created')) return;
+    if (get_option('gl_pages_v3_created')) return;
 
-    $to_create = [
-        ['title'=>'Home',        'slug'=>'granja-home',  'template'=>''],
-        ['title'=>'FAQ',         'slug'=>'faq',          'template'=>'page-faq.php'],
-        ['title'=>'Voluntarios', 'slug'=>'voluntarios',  'template'=>'page-voluntarios.php'],
+    // Pages: [slug, title, template, lang]
+    $pages = [
+        ['granja-home',    'Home',                   '',                      'en'],
+        ['inicio',         'Inicio',                  '',                      'es'],
+        ['faq',            'FAQ',                    'page-faq.php',          'en'],
+        ['preguntas',      'Preguntas frecuentes',   'page-faq.php',          'es'],
+        ['volunteer',      'Volunteer',              'page-voluntarios.php',  'en'],
+        ['voluntarios',    'Voluntarios',            'page-voluntarios.php',  'es'],
     ];
 
-    $home_id = 0;
-    foreach ($to_create as $cfg) {
-        $existing = get_posts(['post_type'=>'page','post_status'=>'publish','name'=>$cfg['slug'],'posts_per_page'=>1]);
-        if ($existing) {
-            if ($cfg['slug'] === 'granja-home') $home_id = $existing[0]->ID;
-            continue;
-        }
-        $id = wp_insert_post(['post_title'=>$cfg['title'],'post_name'=>$cfg['slug'],'post_status'=>'publish','post_type'=>'page','post_content'=>'']);
+    $ids = [];
+    foreach ($pages as [$slug, $title, $tpl, $lang]) {
+        $existing = get_posts(['post_type'=>'page','post_status'=>'publish','name'=>$slug,'posts_per_page'=>1]);
+        $id = $existing ? $existing[0]->ID : wp_insert_post(['post_title'=>$title,'post_name'=>$slug,'post_status'=>'publish','post_type'=>'page','post_content'=>'']);
         if (!is_wp_error($id)) {
-            if ($cfg['template']) update_post_meta($id, '_wp_page_template', $cfg['template']);
-            if ($cfg['slug'] === 'granja-home') $home_id = $id;
+            if ($tpl) update_post_meta($id, '_wp_page_template', $tpl);
+            if (function_exists('pll_set_post_language')) pll_set_post_language($id, $lang);
+            $ids[$slug] = $id;
         }
     }
 
+    // Link translations for Polylang
+    if (function_exists('pll_save_post_translations')) {
+        if (!empty($ids['granja-home']) && !empty($ids['inicio']))
+            pll_save_post_translations(['en' => $ids['granja-home'], 'es' => $ids['inicio']]);
+        if (!empty($ids['faq']) && !empty($ids['preguntas']))
+            pll_save_post_translations(['en' => $ids['faq'], 'es' => $ids['preguntas']]);
+        if (!empty($ids['volunteer']) && !empty($ids['voluntarios']))
+            pll_save_post_translations(['en' => $ids['volunteer'], 'es' => $ids['voluntarios']]);
+    }
+
+    // Set WordPress front page (EN default)
+    $home_id = $ids['granja-home'] ?? 0;
     if ($home_id) {
         update_option('page_on_front', $home_id);
         update_option('show_on_front', 'page');
     }
 
-    update_option('gl_pages_v2_created', true);
+    update_option('gl_pages_v3_created', true);
 }
 
 // ── Theme setup ────────────────────────────────────────────
