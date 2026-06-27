@@ -1,10 +1,10 @@
 <?php
 $is_es = gl_lang() === 'es';
-$label    = get_field('gal_label')    ?: ($is_es ? 'Galería' : 'Gallery');
-$title    = get_field('gal_title')    ?: ($is_es ? 'Momentos en la granja' : 'Moments on the farm');
-$subtitle = get_field('gal_subtitle') ?: ($is_es ? 'Un vistazo a nuestra vida campestre' : 'A glimpse of our farm life');
+$label    = gl_field('gal_label')    ?: ($is_es ? 'Galería' : 'Gallery');
+$title    = gl_field('gal_title')    ?: ($is_es ? 'Momentos en la granja' : 'Moments on the farm');
+$subtitle = gl_field('gal_subtitle') ?: ($is_es ? 'Un vistazo a nuestra vida campestre' : 'A glimpse of our farm life');
 
-$acf_gallery = get_field('gal_images');
+$acf_gallery = gl_field('gal_images');
 if ($acf_gallery) {
     $photos = array_map(function($img){ return $img['url']; }, $acf_gallery);
 } else {

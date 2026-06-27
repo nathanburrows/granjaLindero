@@ -5,13 +5,13 @@
 get_header();
 
 $is_es = gl_lang() === 'es';
-$label    = get_field('faq_label')    ?: ($is_es ? 'Preguntas frecuentes' : 'Frequently asked questions');
-$title    = get_field('faq_title')    ?: ($is_es ? 'Todo lo que necesitas saber' : 'Everything you need to know');
-$subtitle = get_field('faq_subtitle') ?: ($is_es
+$label    = gl_field('faq_label')    ?: ($is_es ? 'Preguntas frecuentes' : 'Frequently asked questions');
+$title    = gl_field('faq_title')    ?: ($is_es ? 'Todo lo que necesitas saber' : 'Everything you need to know');
+$subtitle = gl_field('faq_subtitle') ?: ($is_es
     ? '¿Tienes dudas? Aquí respondemos las preguntas más comunes. Si no encuentras lo que buscas, escríbenos por WhatsApp.'
     : 'Got questions? Here we answer the most common ones. If you can\'t find what you\'re looking for, message us on WhatsApp.');
 
-$faq_items = get_field('faq_items') ?: [];
+$faq_items = gl_field('faq_items') ?: [];
 if (empty($faq_items)) {
     $faq_items = $is_es ? [
         ['q'=>'¿Cuál es el horario de atención de La Granja Ecológica Lindero?','a'=>'Atendemos de miércoles a domingo de 9:00 am a 5:30 pm. Para grupos corporativos o eventos especiales podemos coordinar fechas fuera de este horario.'],

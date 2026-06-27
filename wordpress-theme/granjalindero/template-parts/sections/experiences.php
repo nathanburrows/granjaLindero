@@ -1,14 +1,14 @@
 <?php
 $is_es = gl_lang() === 'es';
-$label    = get_field('exp_label')    ?: ($is_es ? 'Lo que ofrecemos' : 'What we offer');
-$title    = get_field('exp_title')    ?: ($is_es ? 'Experiencias únicas en la granja' : 'Unique experiences on the farm');
-$subtitle = get_field('exp_subtitle') ?: ($is_es
+$label    = gl_field('exp_label')    ?: ($is_es ? 'Lo que ofrecemos' : 'What we offer');
+$title    = gl_field('exp_title')    ?: ($is_es ? 'Experiencias únicas en la granja' : 'Unique experiences on the farm');
+$subtitle = gl_field('exp_subtitle') ?: ($is_es
     ? 'Desde talleres creativos hasta recorridos educativos, tenemos algo especial para cada visitante.'
     : 'From creative workshops to educational tours, we have something special for every visitor.');
-$book_cta = get_field('exp_book_cta') ?: ($is_es ? 'Reservar experiencia' : 'Book this experience');
+$book_cta = gl_field('exp_book_cta') ?: ($is_es ? 'Reservar experiencia' : 'Book this experience');
 $wa_num   = get_option('gl_wa_number', '51966721057');
 
-$items = get_field('exp_items') ?: [];
+$items = gl_field('exp_items') ?: [];
 if (empty($items)) {
     $items = $is_es ? [
         ['subtitle'=>'Animal Friends',            'title'=>'Tour Vivencial',       'description'=>'Conoce de cerca a las vacas, ovejas, alpacas, cuyes, gallinas y más animales que viven en la granja. Interactúa con ellos, aprende sobre su cuidado y la ganadería ecológica, y disfruta de una degustación de nuestros lácteos frescos: leche del día, queso artesanal y yogur natural.', 'image_url'=>''],

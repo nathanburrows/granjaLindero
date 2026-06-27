@@ -1,17 +1,17 @@
 <?php
 $is_es = gl_lang() === 'es';
 
-$label      = get_field('acc_label')    ?: ($is_es ? 'Hospedaje' : 'Lodging');
-$cta_text   = get_field('acc_cta')      ?: ($is_es ? 'Ver disponibilidad' : 'View availability');
-$check_in   = get_field('acc_check_in') ?: ($is_es ? 'Llegada: 14:00 – 15:30' : 'Check-in: 14:00 – 15:30');
-$check_out  = get_field('acc_check_out')?: ($is_es ? 'Salida: 08:00 – 11:00'  : 'Check-out: 08:00 – 11:00');
-$book_note  = get_field('acc_book_note')?: ($is_es
+$label      = gl_field('acc_label')    ?: ($is_es ? 'Hospedaje' : 'Lodging');
+$cta_text   = gl_field('acc_cta')      ?: ($is_es ? 'Ver disponibilidad' : 'View availability');
+$check_in   = gl_field('acc_check_in') ?: ($is_es ? 'Llegada: 14:00 – 15:30' : 'Check-in: 14:00 – 15:30');
+$check_out  = gl_field('acc_check_out')?: ($is_es ? 'Salida: 08:00 – 11:00'  : 'Check-out: 08:00 – 11:00');
+$book_note  = gl_field('acc_book_note')?: ($is_es
     ? 'Se requiere reserva con al menos 1 día de anticipación. No se aceptan reservas el mismo día.'
     : 'Booking required at least 1 day in advance. Same-day bookings not accepted.');
-$rules_note = get_field('acc_rules_note')?: ($is_es
+$rules_note = gl_field('acc_rules_note')?: ($is_es
     ? 'No se permiten mascotas · No se permite fumar · Silencio: 22:00 – 07:00'
     : 'No pets · No smoking · Quiet hours: 22:00 – 07:00');
-$breakfast_addon  = get_field('acc_breakfast_addon') ?: ($is_es ? 'Desayuno continental disponible' : 'Continental breakfast available');
+$breakfast_addon  = gl_field('acc_breakfast_addon') ?: ($is_es ? 'Desayuno continental disponible' : 'Continental breakfast available');
 $also_available   = $is_es ? 'También disponible en' : 'Also available in';
 $cta_check        = $is_es ? 'Consultar disponibilidad' : 'Check availability';
 $lbl_adults       = $is_es ? 'Adultos' : 'Adults';
@@ -24,7 +24,7 @@ $lbl_by_dates     = $is_es ? 'Por fechas' : 'By dates';
 $lbl_by_nights    = $is_es ? 'Por noches' : 'By nights';
 $selected_txt     = $is_es ? 'Seleccionado' : 'Selected';
 
-$buildings = get_field('acc_buildings') ?: [];
+$buildings = gl_field('acc_buildings') ?: [];
 if (empty($buildings)) {
     $buildings = $is_es ? [
         [
@@ -55,7 +55,7 @@ if (empty($buildings)) {
     ];
 }
 
-$rooms = get_field('acc_rooms') ?: [];
+$rooms = gl_field('acc_rooms') ?: [];
 if (empty($rooms)) {
     $rooms = $is_es ? [
         ['building_id'=>'bungalow','building'=>'Bungalow','title'=>'Habitación Matrimonial','description'=>'Bungalow privado con cama doble matrimonial, rodeado de árboles frutales. Hasta 2 personas.','features'=>["1 cama doble matrimonial","Hasta 2 huéspedes","Baño privado con ducha","Amenidades de baño gratuitas","Ropa de cama y toallas","Hervidor eléctrico","Refrigeradora","WiFi gratuito"],'image_url'=>''],

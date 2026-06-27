@@ -5,17 +5,17 @@
 get_header();
 
 $is_es = gl_lang() === 'es';
-$label    = get_field('vol_label')    ?: ($is_es ? 'Voluntariado & Pasantías' : 'Volunteering & Internships');
-$title    = get_field('vol_title')    ?: ($is_es ? 'Haz un impacto real en Tomaykichwa' : 'Make a real impact in Tomaykichwa');
-$subtitle = get_field('vol_subtitle') ?: ($is_es
+$label    = gl_field('vol_label')    ?: ($is_es ? 'Voluntariado & Pasantías' : 'Volunteering & Internships');
+$title    = gl_field('vol_title')    ?: ($is_es ? 'Haz un impacto real en Tomaykichwa' : 'Make a real impact in Tomaykichwa');
+$subtitle = gl_field('vol_subtitle') ?: ($is_es
     ? 'Trabaja en la granja, vive en la comunidad y forma parte de algo más grande — un proyecto que restaura vidas a través de la naturaleza.'
     : 'Work on the farm, live in the community, and be part of something bigger — a project that restores lives through nature.');
-$andemos_url  = get_field('vol_andemos_url') ?: 'https://andemos.peaceandhopeinternational.org/es/inicio/';
+$andemos_url  = gl_field('vol_andemos_url') ?: 'https://andemos.peaceandhopeinternational.org/es/inicio/';
 $andemos_prog = $is_es ? 'Paz y Esperanza Internacional' : 'Peace & Hope International';
 $andemos_name = $is_es ? 'Programa Andemos ↗' : 'Andemos Program ↗';
 $why_cta      = $is_es ? '¿Por qué voluntariarse aquí?' : 'Why volunteer here?';
 
-$roles = get_field('vol_roles') ?: [];
+$roles = gl_field('vol_roles') ?: [];
 if (empty($roles)) {
     $roles = $is_es ? [
         ['icon'=>'🌱','title'=>'Agroecología y Huerto','desc'=>'Siembra, cuida y cosecha en nuestros huertos orgánicos. Aprende técnicas de agricultura ecológica de la mano de nuestro equipo.'],
@@ -30,8 +30,8 @@ if (empty($roles)) {
     ];
 }
 
-$offer_title = get_field('vol_offer_title') ?: ($is_es ? 'Qué ofrecemos' : 'What we offer');
-$offers = get_field('vol_offers') ?: [];
+$offer_title = gl_field('vol_offer_title') ?: ($is_es ? 'Qué ofrecemos' : 'What we offer');
+$offers = gl_field('vol_offers') ?: [];
 if (empty($offers)) {
     $offers = $is_es ? [
         'Alojamiento en la granja (según disponibilidad)',
@@ -48,8 +48,8 @@ if (empty($offers)) {
     ];
 }
 
-$req_title = get_field('vol_req_title') ?: ($is_es ? 'Requisitos' : 'Requirements');
-$requires = get_field('vol_requires') ?: [];
+$req_title = gl_field('vol_req_title') ?: ($is_es ? 'Requisitos' : 'Requirements');
+$requires = gl_field('vol_requires') ?: [];
 if (empty($requires)) {
     $requires = $is_es ? [
         'Compromiso mínimo de 2 semanas',
@@ -64,8 +64,8 @@ if (empty($requires)) {
     ];
 }
 
-$apply_title = get_field('vol_apply_title') ?: ($is_es ? 'Cómo postular' : 'How to apply');
-$apply_body  = get_field('vol_apply_body')  ?: ($is_es
+$apply_title = gl_field('vol_apply_title') ?: ($is_es ? 'Cómo postular' : 'How to apply');
+$apply_body  = gl_field('vol_apply_body')  ?: ($is_es
     ? 'El proceso de voluntariado está gestionado por el programa Andemos de Paz y Esperanza Internacional. Completa tu solicitud en su sitio web o escríbenos directamente por WhatsApp para coordinar tu llegada.'
     : 'The volunteer process is managed by the Andemos program of Paz y Esperanza Internacional. Complete your application on their website or message us directly on WhatsApp to coordinate your arrival.');
 $apply_wa      = $is_es ? 'Escríbenos por WhatsApp' : 'Message us on WhatsApp';

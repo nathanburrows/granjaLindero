@@ -1,14 +1,14 @@
 <?php
 $is_es = gl_lang() === 'es';
-$tag      = get_field('grp_tag')      ?: ($is_es ? 'Grupos y Eventos' : 'Groups & Events');
-$title    = get_field('grp_title')    ?: ($is_es ? 'El espacio perfecto para tu grupo' : 'The perfect space for your group');
-$subtitle = get_field('grp_subtitle') ?: ($is_es
+$tag      = gl_field('grp_tag')      ?: ($is_es ? 'Grupos y Eventos' : 'Groups & Events');
+$title    = gl_field('grp_title')    ?: ($is_es ? 'El espacio perfecto para tu grupo' : 'The perfect space for your group');
+$subtitle = gl_field('grp_subtitle') ?: ($is_es
     ? 'Iglesias, colegios, empresas y familias encuentran en La Granja Lindero el lugar ideal para retiros, paseos y eventos al aire libre.'
     : 'Churches, schools, companies, and families find La Granja Lindero the ideal place for retreats, outings, and outdoor events.');
-$cta_wa = get_field('grp_cta') ?: ($is_es ? 'Consultar disponibilidad' : 'Check availability');
+$cta_wa = gl_field('grp_cta') ?: ($is_es ? 'Consultar disponibilidad' : 'Check availability');
 
 $pillars_title = $is_es ? 'Todo en un solo lugar' : 'All in one place';
-$pillars = get_field('grp_pillars') ?: [];
+$pillars = gl_field('grp_pillars') ?: [];
 if (empty($pillars)) {
     $pillars = $is_es ? [
         ['title'=>'Experiencias','description'=>'Tour vivencial, talleres de horticultura terapéutica, recorridos educativos y noche de fogón — diseñados para grupos grandes.','image_url'=>''],
@@ -22,7 +22,7 @@ if (empty($pillars)) {
 }
 
 $act_title = $is_es ? 'Áreas recreativas incluidas' : 'Included recreational areas';
-$activities = get_field('grp_activities') ?: [];
+$activities = gl_field('grp_activities') ?: [];
 if (empty($activities)) {
     $activities = $is_es
         ? ['Voleibol','Fútbol','Área de picnic','Fogón nocturno','Senderos naturales','Interacción con animales']
@@ -30,13 +30,13 @@ if (empty($activities)) {
 }
 
 $groups_title = $is_es ? 'Ideal para' : 'Ideal for';
-$group_types = get_field('grp_types') ?: [];
+$group_types = gl_field('grp_types') ?: [];
 if (empty($group_types)) {
     $group_types = $is_es
         ? ['Iglesias y comunidades','Colegios y universidades','Empresas y equipos','Familias y amigos']
         : ['Churches & communities','Schools & universities','Companies & teams','Families & friends'];
 }
-$grp_note = get_field('grp_note') ?: ($is_es
+$grp_note = gl_field('grp_note') ?: ($is_es
     ? 'Coordinamos paquetes a medida según el tamaño y necesidades de tu grupo.'
     : 'We coordinate custom packages based on the size and needs of your group.');
 

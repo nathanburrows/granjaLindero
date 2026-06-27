@@ -1,11 +1,11 @@
 <?php
 $is_es    = gl_lang() === 'es';
-$tagline  = get_field('hero_tagline')  ?: ($is_es ? 'Reconecta con la naturaleza' : 'Reconnect with nature');
-$subtitle = get_field('hero_subtitle') ?: ($is_es ? 'Vive una experiencia única en nuestra granja ecológica en el corazón de Huánuco, Perú.' : 'Live a unique experience at our ecological farm in the heart of Huánuco, Peru.');
-$cta_exp  = get_field('hero_cta_exp')  ?: ($is_es ? 'Reservar experiencia' : 'Book an experience');
-$cta_room = get_field('hero_cta_room') ?: ($is_es ? 'Reservar habitación' : 'Book a room');
-$badge    = get_field('hero_badge')    ?: 'Tomaykichwa · Huánuco · Perú';
-$video    = get_field('hero_video');
+$tagline  = gl_field('hero_tagline')  ?: ($is_es ? 'Reconecta con la naturaleza' : 'Reconnect with nature');
+$subtitle = gl_field('hero_subtitle') ?: ($is_es ? 'Vive una experiencia única en nuestra granja ecológica en el corazón de Huánuco, Perú.' : 'Live a unique experience at our ecological farm in the heart of Huánuco, Peru.');
+$cta_exp  = gl_field('hero_cta_exp')  ?: ($is_es ? 'Reservar experiencia' : 'Book an experience');
+$cta_room = gl_field('hero_cta_room') ?: ($is_es ? 'Reservar habitación' : 'Book a room');
+$badge    = gl_field('hero_badge')    ?: 'Tomaykichwa · Huánuco · Perú';
+$video    = gl_field('hero_video');
 $video_url = $video ? $video['url'] : get_template_directory_uri() . '/assets/video/hero-bg.mp4';
 ?>
 <section class="hero" id="inicio">

@@ -1,18 +1,18 @@
 <?php
 $is_es       = gl_lang() === 'es';
-$label       = get_field('about_label')        ?: ($is_es ? 'Quiénes somos' : 'Who we are');
-$title       = get_field('about_title')        ?: ($is_es ? 'Bienvenidos a La Granja Ecológica Lindero' : 'Welcome to La Granja Ecológica Lindero');
-$body        = get_field('about_body')         ?: ($is_es ? 'Somos un espacio donde la naturaleza, la agricultura ecológica y el bienestar se encuentran.' : 'A space where nature, ecological farming, and wellbeing come together.');
-$mission     = get_field('about_mission')      ?: '';
-$m_link_text = get_field('about_mission_link') ?: 'Paz y Esperanza';
-$m_link_url  = get_field('about_mission_url')  ?: 'https://www.pazyesperanza.org/pe/';
-$impact      = get_field('about_impact_note')  ?: ($is_es ? 'El 30% de nuestros ingresos se destina directamente a los esfuerzos locales de Paz y Esperanza en Huánuco.' : '30% of our revenue goes directly to local Peace & Hope efforts in Huánuco.');
-$vision      = get_field('about_vision')       ?: '';
-$img_front   = get_field('about_img_front')    ?: get_template_directory_uri() . '/assets/images/hospedaje_hamaca_jardin.jpg';
-$img_back    = get_field('about_img_back')     ?: get_template_directory_uri() . '/assets/images/animales_alpacas.jpg';
-$s1v  = get_field('about_stat1')       ?: '4,100+'; $s1l = get_field('about_stat1_label') ?: ($is_es ? 'Visitantes felices' : 'Happy visitors');
-$s2v  = get_field('about_stat2')       ?: '5+';    $s2l = get_field('about_stat2_label') ?: ($is_es ? 'Tipos de experiencias' : 'Experience types');
-$s3v  = get_field('about_stat3')       ?: '1';     $s3l = get_field('about_stat3_label') ?: ($is_es ? 'Lugar inolvidable' : 'Unforgettable place');
+$label       = gl_field('about_label')        ?: ($is_es ? 'Quiénes somos' : 'Who we are');
+$title       = gl_field('about_title')        ?: ($is_es ? 'Bienvenidos a La Granja Ecológica Lindero' : 'Welcome to La Granja Ecológica Lindero');
+$body        = gl_field('about_body')         ?: ($is_es ? 'Somos un espacio donde la naturaleza, la agricultura ecológica y el bienestar se encuentran.' : 'A space where nature, ecological farming, and wellbeing come together.');
+$mission     = gl_field('about_mission')      ?: '';
+$m_link_text = gl_field('about_mission_link') ?: 'Paz y Esperanza';
+$m_link_url  = gl_field('about_mission_url')  ?: 'https://www.pazyesperanza.org/pe/';
+$impact      = gl_field('about_impact_note')  ?: ($is_es ? 'El 30% de nuestros ingresos se destina directamente a los esfuerzos locales de Paz y Esperanza en Huánuco.' : '30% of our revenue goes directly to local Peace & Hope efforts in Huánuco.');
+$vision      = gl_field('about_vision')       ?: '';
+$img_front   = gl_field('about_img_front')    ?: get_template_directory_uri() . '/assets/images/hospedaje_hamaca_jardin.jpg';
+$img_back    = gl_field('about_img_back')     ?: get_template_directory_uri() . '/assets/images/animales_alpacas.jpg';
+$s1v  = gl_field('about_stat1')       ?: '4,100+'; $s1l = gl_field('about_stat1_label') ?: ($is_es ? 'Visitantes felices' : 'Happy visitors');
+$s2v  = gl_field('about_stat2')       ?: '5+';    $s2l = gl_field('about_stat2_label') ?: ($is_es ? 'Tipos de experiencias' : 'Experience types');
+$s3v  = gl_field('about_stat3')       ?: '1';     $s3l = gl_field('about_stat3_label') ?: ($is_es ? 'Lugar inolvidable' : 'Unforgettable place');
 $mission_label = $is_es ? 'Misión'  : 'Mission';
 $vision_label  = $is_es ? 'Visión'  : 'Vision';
 ?>

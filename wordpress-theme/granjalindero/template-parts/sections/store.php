@@ -1,14 +1,14 @@
 <?php
 $is_es = gl_lang() === 'es';
-$label       = get_field('store_label')       ?: ($is_es ? 'Tienda' : 'Store');
-$title       = get_field('store_title')       ?: ($is_es ? 'Productos de la granja' : 'Farm products');
-$subtitle    = get_field('store_subtitle')    ?: ($is_es ? 'Llévate un pedacito de la granja a casa' : 'Take a little piece of the farm home');
-$description = get_field('store_description') ?: ($is_es
+$label       = gl_field('store_label')       ?: ($is_es ? 'Tienda' : 'Store');
+$title       = gl_field('store_title')       ?: ($is_es ? 'Productos de la granja' : 'Farm products');
+$subtitle    = gl_field('store_subtitle')    ?: ($is_es ? 'Llévate un pedacito de la granja a casa' : 'Take a little piece of the farm home');
+$description = gl_field('store_description') ?: ($is_es
     ? 'En nuestra tienda encontrarás productos frescos elaborados en la granja. Lácteos, huevos y más — directamente del campo a tus manos.'
     : 'In our store you\'ll find fresh products made on the farm. Dairy, eggs, and more — straight from the farm to your hands.');
-$cta = get_field('store_cta') ?: ($is_es ? 'Consultar productos' : 'Enquire about products');
+$cta = gl_field('store_cta') ?: ($is_es ? 'Consultar productos' : 'Enquire about products');
 
-$products = get_field('store_products') ?: [];
+$products = gl_field('store_products') ?: [];
 if (empty($products)) {
     $products = $is_es ? [
         ['name'=>'Leche fresca',    'detail'=>'Sin procesar, del día'],

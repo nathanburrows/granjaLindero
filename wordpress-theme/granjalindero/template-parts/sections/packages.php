@@ -1,18 +1,18 @@
 <?php
 $is_es = gl_lang() === 'es';
-$tag      = get_field('pkg_tag')      ?: ($is_es ? 'Paquetes y Precios'   : 'Packages & Pricing');
-$title    = get_field('pkg_title')    ?: ($is_es ? 'Elige tu plan perfecto' : 'Choose your perfect plan');
-$subtitle = get_field('pkg_subtitle') ?: ($is_es
+$tag      = gl_field('pkg_tag')      ?: ($is_es ? 'Paquetes y Precios'   : 'Packages & Pricing');
+$title    = gl_field('pkg_title')    ?: ($is_es ? 'Elige tu plan perfecto' : 'Choose your perfect plan');
+$subtitle = gl_field('pkg_subtitle') ?: ($is_es
     ? 'Desde una mañana hasta un fin de semana completo — tenemos el paquete ideal para ti.'
     : 'From a morning visit to a full weekend — we have the ideal package for you.');
 $per_person = $is_es ? 'por persona' : 'per person';
 $includes   = $is_es ? 'Incluye'     : 'Includes';
 $cta_book   = $is_es ? 'Reservar este paquete' : 'Book this package';
-$note       = get_field('pkg_note') ?: ($is_es
+$note       = gl_field('pkg_note') ?: ($is_es
     ? 'Precios en Soles peruanos (S/). Consulta disponibilidad por WhatsApp.'
     : 'Prices in Peruvian Soles (S/). Ask about availability on WhatsApp.');
 
-$packages = get_field('pkg_items') ?: [];
+$packages = gl_field('pkg_items') ?: [];
 if (empty($packages)) {
     $packages = $is_es ? [
         [

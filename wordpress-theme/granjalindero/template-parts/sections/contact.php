@@ -1,8 +1,8 @@
 <?php
 $is_es = gl_lang() === 'es';
-$label    = get_field('contact_label')    ?: ($is_es ? 'Contacto' : 'Contact');
-$title    = get_field('contact_title')    ?: ($is_es ? '¿Listo para vivir la experiencia?' : 'Ready to live the experience?');
-$subtitle = get_field('contact_subtitle') ?: ($is_es
+$label    = gl_field('contact_label')    ?: ($is_es ? 'Contacto' : 'Contact');
+$title    = gl_field('contact_title')    ?: ($is_es ? '¿Listo para vivir la experiencia?' : 'Ready to live the experience?');
+$subtitle = gl_field('contact_subtitle') ?: ($is_es
     ? 'Escríbenos o llámanos para hacer tu reserva. Estamos disponibles para grupos familiares, escolares y corporativos.'
     : 'Write or call us to make your booking. We\'re available for family, school, and corporate groups.');
 

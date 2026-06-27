@@ -1,8 +1,8 @@
 <?php
 $is_es = gl_lang() === 'es';
-$label = get_field('testi_label') ?: ($is_es ? 'Lo que dicen' : 'What guests say');
-$title = get_field('testi_title') ?: ($is_es ? 'Experiencias reales' : 'Real experiences');
-$items = get_field('testi_items') ?: [];
+$label = gl_field('testi_label') ?: ($is_es ? 'Lo que dicen' : 'What guests say');
+$title = gl_field('testi_title') ?: ($is_es ? 'Experiencias reales' : 'Real experiences');
+$items = gl_field('testi_items') ?: [];
 
 if (empty($items)) {
     $items = [

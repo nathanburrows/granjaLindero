@@ -4,11 +4,15 @@
  * Theme setup, scripts, ACF fields, Polylang strings, Elementor support.
  */
 
-// ── ACF safety wrapper ─────────────────────────────────────
-if (!function_exists('get_field')) {
-    function get_field($key, $post_id = false) { return null; }
-    function get_fields($post_id = false) { return []; }
-    function have_rows($key, $post_id = false) { return false; }
+// ── ACF safety wrappers (never clash with ACF's own functions) ─
+function gl_field($key, $post_id = false) {
+    return function_exists('get_field') ? get_field($key, $post_id) : null;
+}
+function gl_fields($post_id = false) {
+    return function_exists('get_fields') ? get_fields($post_id) : [];
+}
+function gl_rows($key, $post_id = false) {
+    return function_exists('have_rows') ? have_rows($key, $post_id) : false;
 }
 
 // ── Theme setup ────────────────────────────────────────────

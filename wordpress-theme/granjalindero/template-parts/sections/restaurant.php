@@ -1,11 +1,11 @@
 <?php
 $is_es = gl_lang() === 'es';
-$label       = get_field('rest_label')       ?: ($is_es ? 'Restaurante' : 'Restaurant');
-$title       = get_field('rest_title')       ?: ($is_es ? 'Sabores del campo' : 'Flavours of the farm');
-$description = get_field('rest_description') ?: ($is_es
+$label       = gl_field('rest_label')       ?: ($is_es ? 'Restaurante' : 'Restaurant');
+$title       = gl_field('rest_title')       ?: ($is_es ? 'Sabores del campo' : 'Flavours of the farm');
+$description = gl_field('rest_description') ?: ($is_es
     ? 'Disfruta de nuestra cocina con platos típicos de la región, preparados con ingredientes frescos de nuestra propia granja. Una experiencia gastronómica auténtica en plena naturaleza.'
     : 'Enjoy our kitchen with typical regional dishes, prepared with fresh ingredients from our own farm. An authentic gastronomic experience in the heart of nature.');
-$features = get_field('rest_features') ?: [];
+$features = gl_field('rest_features') ?: [];
 if (empty($features)) {
     $features = $is_es
         ? ['Platos típicos regionales', 'Ingredientes de la granja', 'Mesas al aire libre', 'Vista al campo']
@@ -18,7 +18,7 @@ $imgs = [
     get_template_directory_uri() . '/assets/images/tienda_kiosco_menu.jpg',
     get_template_directory_uri() . '/assets/images/restaurant_pachamanca.jpg',
 ];
-if ($custom = get_field('rest_images')) {
+if ($custom = gl_field('rest_images')) {
     $imgs = array_map('wp_get_attachment_url', array_column($custom,'ID')) ?: $imgs;
 }
 ?>
