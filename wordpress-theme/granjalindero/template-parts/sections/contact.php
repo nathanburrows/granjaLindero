@@ -8,7 +8,9 @@ $subtitle = gl_field('contact_subtitle') ?: ($is_es
 
 $phone     = get_option('gl_phone', '+51 966 721 057');
 $hours     = $is_es ? 'Horarios de atención' : 'Opening hours';
-$hours_val = $is_es ? 'Miércoles a Domingo · 9:00 am – 5:30 pm' : 'Wednesday to Sunday · 9:00 am – 5:30 pm';
+$hours_val = $is_es
+    ? get_option('gl_hours_es', 'Miércoles a Domingo · 9:00 am – 5:30 pm')
+    : get_option('gl_hours_en', 'Wednesday to Sunday · 9:00 am – 5:30 pm');
 $wa_label  = $is_es ? 'Escríbenos por WhatsApp' : 'Message us on WhatsApp';
 $call_label= $is_es ? 'Llamar ahora' : 'Call now';
 $book_now  = $is_es ? 'Reservar ahora' : 'Book now';

@@ -4,9 +4,23 @@
  * Theme setup, scripts, ACF fields, Polylang strings, Elementor support.
  */
 
-// ── ACF safety wrappers (never clash with ACF's own functions) ─
+// ── Content admin panel ────────────────────────────────────────
+require_once get_template_directory() . '/admin/options-page.php';
+
+// ── Field resolver: options table → ACF → null ─────────────────
+// Templates call gl_field('hero_tagline') and get the value from
+// the Site Content panel, ACF (if installed), or null (uses hardcoded default).
 function gl_field($key, $post_id = false) {
-    return function_exists('get_field') ? get_field($key, $post_id) : null;
+    $lang = function_exists('pll_current_language') ? pll_current_language() : 'es';
+    // Language-specific option (e.g. gl_hero_tagline_es)
+    $val = get_option('gl_' . $key . '_' . $lang, '');
+    if ($val !== '') return $val;
+    // Language-neutral option (e.g. gl_about_stat1, gl_pkg_1_price)
+    $val = get_option('gl_' . $key, '');
+    if ($val !== '') return $val;
+    // ACF fallback (works if ACF plugin is installed)
+    if (function_exists('get_field')) return get_field($key, $post_id);
+    return null;
 }
 function gl_fields($post_id = false) {
     return function_exists('get_fields') ? get_fields($post_id) : [];

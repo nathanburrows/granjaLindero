@@ -20,47 +20,54 @@ $pkg_photos = [
     [$img.'experiencias_jardin_gazebo.jpg',$img.'experiencias_cuyes_granja.jpg',    $img.'hospedaje_edificio_principal.jpg'],
 ];
 
+$pkg_prices = [
+    get_option('gl_pkg_1_price', 'S/40'),
+    get_option('gl_pkg_2_price', 'S/55'),
+    get_option('gl_pkg_3_price', 'S/200'),
+    get_option('gl_pkg_4_price', 'S/310'),
+];
+
 $packages = gl_field('pkg_items') ?: [];
 if (empty($packages)) {
     $packages = $is_es ? [
         [
-            'name'=>'Half-Day', 'price'=>'S/40', 'highlight'=>false,
+            'name'=>'Half-Day', 'price'=>$pkg_prices[0], 'highlight'=>false,
             'tagline'=>'La experiencia perfecta para una mañana', 'min_people'=>5,
             'includes'=>["Tour Animal Friends o Circuito Ecológico","Interacción con animales de la granja","Degustación de productos lácteos","Almuerzo: plato típico de la región"],
         ],
         [
-            'name'=>'Full-Day', 'price'=>'S/55', 'highlight'=>true,
+            'name'=>'Full-Day', 'price'=>$pkg_prices[1], 'highlight'=>true,
             'tagline'=>'El día completo en la granja', 'min_people'=>5,
             'includes'=>["Tour Animal Friends","Tour Circuito Ecológico","Interacción con animales + degustación láctea","Almuerzo: plato típico de la región","Llévate una plantita del circuito"],
         ],
         [
-            'name'=>'2 Días / 1 Noche', 'price'=>'S/200', 'highlight'=>false,
+            'name'=>'2 Días / 1 Noche', 'price'=>$pkg_prices[2], 'highlight'=>false,
             'tagline'=>'Una escapada completa en la naturaleza', 'min_people'=>2,
             'includes'=>["Tour Animal Friends + degustación láctea","Taller Conexión Verde (horticultura terapéutica)","Tour Circuito Ecológico","2 almuerzos + 1 cena + 1 desayuno","1 noche de hospedaje","Noche de fogón bajo las estrellas"],
         ],
         [
-            'name'=>'3 Días / 2 Noches', 'price'=>'S/310', 'highlight'=>false,
+            'name'=>'3 Días / 2 Noches', 'price'=>$pkg_prices[3], 'highlight'=>false,
             'tagline'=>'La experiencia completa de Huánuco', 'min_people'=>2,
             'includes'=>["Todo lo incluido en 2D/1N","Visita a la Hacienda Cachigaga","Recorrido por atractivos turísticos cercanos","3 almuerzos + 2 cenas + 2 desayunos","2 noches de hospedaje","Actividades recreativas libres"],
         ],
     ] : [
         [
-            'name'=>'Half-Day', 'price'=>'S/40', 'highlight'=>false,
+            'name'=>'Half-Day', 'price'=>$pkg_prices[0], 'highlight'=>false,
             'tagline'=>'The perfect experience for a morning', 'min_people'=>5,
             'includes'=>["Animal Friends Tour or Ecological Circuit Tour","Farm animal interaction","Dairy product tasting","Lunch: traditional regional dish"],
         ],
         [
-            'name'=>'Full-Day', 'price'=>'S/55', 'highlight'=>true,
+            'name'=>'Full-Day', 'price'=>$pkg_prices[1], 'highlight'=>true,
             'tagline'=>'A full day on the farm', 'min_people'=>5,
             'includes'=>["Animal Friends Tour","Ecological Circuit Tour","Animal interaction + dairy tasting","Lunch: traditional regional dish","Take home a seedling"],
         ],
         [
-            'name'=>'2 Days / 1 Night', 'price'=>'S/200', 'highlight'=>false,
+            'name'=>'2 Days / 1 Night', 'price'=>$pkg_prices[2], 'highlight'=>false,
             'tagline'=>'A complete nature getaway', 'min_people'=>2,
             'includes'=>["Animal Friends Tour + dairy tasting","Conexión Verde Workshop (therapeutic horticulture)","Ecological Circuit Tour","2 lunches + 1 dinner + 1 breakfast","1 night lodging","Campfire night under the stars"],
         ],
         [
-            'name'=>'3 Days / 2 Nights', 'price'=>'S/310', 'highlight'=>false,
+            'name'=>'3 Days / 2 Nights', 'price'=>$pkg_prices[3], 'highlight'=>false,
             'tagline'=>'The complete Huánuco experience', 'min_people'=>2,
             'includes'=>["Everything in 2D/1N","Visit to Hacienda Cachigaga","Nearby tourist attractions tour","3 lunches + 2 dinners + 2 breakfasts","2 nights lodging","Free recreational activities"],
         ],
