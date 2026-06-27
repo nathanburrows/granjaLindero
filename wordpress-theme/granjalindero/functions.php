@@ -132,7 +132,7 @@ function gl_register_acf_fields(): void {
     acf_add_local_field_group([
         'key'      => 'group_gl_hero',
         'title'    => 'Hero Section',
-        'location' => [[ ['param'=>'page_template','operator'=>'==','value'=>'front-page.php'] ]],
+        'location' => [[ ['param'=>'page_type','operator'=>'==','value'=>'front_page'] ]],
         'fields'   => [
             ['key'=>'field_hero_tagline',    'label'=>'Tagline',            'name'=>'hero_tagline',     'type'=>'text'],
             ['key'=>'field_hero_subtitle',   'label'=>'Subtitle',           'name'=>'hero_subtitle',    'type'=>'textarea','rows'=>2],
@@ -147,7 +147,7 @@ function gl_register_acf_fields(): void {
     acf_add_local_field_group([
         'key'      => 'group_gl_about',
         'title'    => 'About Section',
-        'location' => [[ ['param'=>'page_template','operator'=>'==','value'=>'front-page.php'] ]],
+        'location' => [[ ['param'=>'page_type','operator'=>'==','value'=>'front_page'] ]],
         'fields'   => [
             ['key'=>'field_about_label',          'label'=>'Label',              'name'=>'about_label',          'type'=>'text'],
             ['key'=>'field_about_title',          'label'=>'Title',              'name'=>'about_title',          'type'=>'text'],
@@ -172,7 +172,7 @@ function gl_register_acf_fields(): void {
     acf_add_local_field_group([
         'key'      => 'group_gl_experiences',
         'title'    => 'Experiences Section',
-        'location' => [[ ['param'=>'page_template','operator'=>'==','value'=>'front-page.php'] ]],
+        'location' => [[ ['param'=>'page_type','operator'=>'==','value'=>'front_page'] ]],
         'fields'   => [
             ['key'=>'field_exp_label',    'label'=>'Label',    'name'=>'exp_label',    'type'=>'text'],
             ['key'=>'field_exp_title',    'label'=>'Title',    'name'=>'exp_title',    'type'=>'text'],
@@ -194,7 +194,7 @@ function gl_register_acf_fields(): void {
     acf_add_local_field_group([
         'key'      => 'group_gl_packages',
         'title'    => 'Packages Section',
-        'location' => [[ ['param'=>'page_template','operator'=>'==','value'=>'front-page.php'] ]],
+        'location' => [[ ['param'=>'page_type','operator'=>'==','value'=>'front_page'] ]],
         'fields'   => [
             ['key'=>'field_pkg_label',    'label'=>'Label',    'name'=>'pkg_label',    'type'=>'text'],
             ['key'=>'field_pkg_title',    'label'=>'Title',    'name'=>'pkg_title',    'type'=>'text'],
@@ -218,7 +218,7 @@ function gl_register_acf_fields(): void {
     acf_add_local_field_group([
         'key'      => 'group_gl_accommodation',
         'title'    => 'Accommodation Section',
-        'location' => [[ ['param'=>'page_template','operator'=>'==','value'=>'front-page.php'] ]],
+        'location' => [[ ['param'=>'page_type','operator'=>'==','value'=>'front_page'] ]],
         'fields'   => [
             ['key'=>'field_acc_label',        'label'=>'Label',          'name'=>'acc_label',        'type'=>'text'],
             ['key'=>'field_acc_checkin',      'label'=>'Check-in Time',  'name'=>'acc_checkin',      'type'=>'text'],
@@ -255,7 +255,7 @@ function gl_register_acf_fields(): void {
     acf_add_local_field_group([
         'key'      => 'group_gl_restaurant',
         'title'    => 'Restaurant Section',
-        'location' => [[ ['param'=>'page_template','operator'=>'==','value'=>'front-page.php'] ]],
+        'location' => [[ ['param'=>'page_type','operator'=>'==','value'=>'front_page'] ]],
         'fields'   => [
             ['key'=>'field_rest_label',    'label'=>'Label',       'name'=>'rest_label',    'type'=>'text'],
             ['key'=>'field_rest_title',    'label'=>'Title',       'name'=>'rest_title',    'type'=>'text'],
@@ -269,7 +269,7 @@ function gl_register_acf_fields(): void {
     acf_add_local_field_group([
         'key'      => 'group_gl_store',
         'title'    => 'Store Section',
-        'location' => [[ ['param'=>'page_template','operator'=>'==','value'=>'front-page.php'] ]],
+        'location' => [[ ['param'=>'page_type','operator'=>'==','value'=>'front_page'] ]],
         'fields'   => [
             ['key'=>'field_store_label', 'label'=>'Label', 'name'=>'store_label', 'type'=>'text'],
             ['key'=>'field_store_title', 'label'=>'Title', 'name'=>'store_title', 'type'=>'text'],
@@ -289,7 +289,7 @@ function gl_register_acf_fields(): void {
     acf_add_local_field_group([
         'key'      => 'group_gl_groups',
         'title'    => 'Groups Section',
-        'location' => [[ ['param'=>'page_template','operator'=>'==','value'=>'front-page.php'] ]],
+        'location' => [[ ['param'=>'page_type','operator'=>'==','value'=>'front_page'] ]],
         'fields'   => [
             ['key'=>'field_groups_label',    'label'=>'Label',       'name'=>'groups_label',    'type'=>'text'],
             ['key'=>'field_groups_title',    'label'=>'Title',       'name'=>'groups_title',    'type'=>'text'],
@@ -303,7 +303,7 @@ function gl_register_acf_fields(): void {
     acf_add_local_field_group([
         'key'      => 'group_gl_gallery',
         'title'    => 'Gallery Section',
-        'location' => [[ ['param'=>'page_template','operator'=>'==','value'=>'front-page.php'] ]],
+        'location' => [[ ['param'=>'page_type','operator'=>'==','value'=>'front_page'] ]],
         'fields'   => [
             ['key'=>'field_gal_label',  'label'=>'Label', 'name'=>'gal_label', 'type'=>'text'],
             ['key'=>'field_gal_title',  'label'=>'Title', 'name'=>'gal_title', 'type'=>'text'],
@@ -315,7 +315,7 @@ function gl_register_acf_fields(): void {
     acf_add_local_field_group([
         'key'      => 'group_gl_testimonials',
         'title'    => 'Testimonials',
-        'location' => [[ ['param'=>'page_template','operator'=>'==','value'=>'front-page.php'] ]],
+        'location' => [[ ['param'=>'page_type','operator'=>'==','value'=>'front_page'] ]],
         'fields'   => [
             ['key'=>'field_testi_label', 'label'=>'Label', 'name'=>'testi_label', 'type'=>'text'],
             ['key'=>'field_testi_title', 'label'=>'Title', 'name'=>'testi_title', 'type'=>'text'],
@@ -335,7 +335,7 @@ function gl_register_acf_fields(): void {
     acf_add_local_field_group([
         'key'      => 'group_gl_contact',
         'title'    => 'Contact Section',
-        'location' => [[ ['param'=>'page_template','operator'=>'==','value'=>'front-page.php'] ]],
+        'location' => [[ ['param'=>'page_type','operator'=>'==','value'=>'front_page'] ]],
         'fields'   => [
             ['key'=>'field_contact_label',    'label'=>'Label',    'name'=>'contact_label',    'type'=>'text'],
             ['key'=>'field_contact_title',    'label'=>'Title',    'name'=>'contact_title',    'type'=>'text'],
