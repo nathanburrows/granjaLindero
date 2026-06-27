@@ -4,6 +4,13 @@
  * Theme setup, scripts, ACF fields, Polylang strings, Elementor support.
  */
 
+// ── ACF safety wrapper ─────────────────────────────────────
+if (!function_exists('get_field')) {
+    function get_field($key, $post_id = false) { return null; }
+    function get_fields($post_id = false) { return []; }
+    function have_rows($key, $post_id = false) { return false; }
+}
+
 // ── Theme setup ────────────────────────────────────────────
 add_action('after_setup_theme', function () {
     add_theme_support('title-tag');
