@@ -61,16 +61,17 @@ function gl_str(string $key, string $fallback): string {
 
     <!-- Right actions -->
     <div class="nav-actions">
-      <?php if (function_exists('pll_the_languages')): ?>
       <div class="lang-toggle">
-        <?php pll_the_languages(['show_flags'=>0,'show_names'=>1,'dropdown'=>0,'raw'=>0,'display_names_in'=>'name']); ?>
+        <?php if (function_exists('pll_the_languages')):
+          foreach (pll_the_languages(['raw'=>1]) as $l): ?>
+          <a href="<?php echo esc_url($l['url']); ?>" class="lang-btn<?php echo $l['current_lang'] ? ' active' : ''; ?>">
+            <?php echo esc_html(strtoupper($l['slug'])); ?>
+          </a>
+        <?php endforeach; else: ?>
+          <a href="#" class="lang-btn active">ES</a>
+          <a href="#" class="lang-btn">EN</a>
+        <?php endif; ?>
       </div>
-      <?php else: ?>
-      <div class="lang-toggle">
-        <button class="active">ES</button>
-        <button>EN</button>
-      </div>
-      <?php endif; ?>
 
       <a href="<?php echo esc_url(gl_wa_url($is_es ? 'Hola, me gustaría hacer una reserva.' : 'Hi, I would like to make a booking.')); ?>"
          target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
@@ -102,9 +103,17 @@ function gl_str(string $key, string $fallback): string {
     <a href="<?php echo get_permalink($vol_page); ?>"><?php echo $is_es ? 'Voluntariado' : 'Volunteer'; ?></a>
     <?php endif; ?>
     <div class="nav-mobile-footer">
-      <?php if (function_exists('pll_the_languages')): ?>
-      <div class="lang-toggle"><?php pll_the_languages(['show_flags'=>0,'show_names'=>1]); ?></div>
-      <?php endif; ?>
+      <div class="lang-toggle">
+        <?php if (function_exists('pll_the_languages')):
+          foreach (pll_the_languages(['raw'=>1]) as $l): ?>
+          <a href="<?php echo esc_url($l['url']); ?>" class="lang-btn<?php echo $l['current_lang'] ? ' active' : ''; ?>">
+            <?php echo esc_html(strtoupper($l['slug'])); ?>
+          </a>
+        <?php endforeach; else: ?>
+          <a href="#" class="lang-btn active">ES</a>
+          <a href="#" class="lang-btn">EN</a>
+        <?php endif; ?>
+      </div>
       <a href="<?php echo esc_url(gl_wa_url('')); ?>" target="_blank" rel="noopener noreferrer"
          class="btn btn--primary btn--sm">
         <?php echo $is_es ? 'Reservar' : 'Book Now'; ?>
