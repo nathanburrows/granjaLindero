@@ -282,6 +282,47 @@
     }
   };
 
+  /* ── Smooth scroll for same-page hash links ─────────────── */
+  document.querySelectorAll('a[href]').forEach(function (a) {
+    var href = a.getAttribute('href');
+    if (!href) return;
+    // Match links like /#section or #section
+    var match = href.match(/(?:^\/)?#(.+)$/);
+    if (!match) return;
+    a.addEventListener('click', function (e) {
+      var target = document.getElementById(match[1]);
+      if (!target) return;
+      e.preventDefault();
+      // Close mobile menu if open
+      if (mobileMenu) { mobileMenu.classList.remove('open'); }
+      if (hamburger) { hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); }
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  /* ── Scroll spy — highlight active nav link ──────────────── */
+  var navAnchors = $$('#gl-nav .nav-links a[href]').filter(function (a) {
+    return a.getAttribute('href').indexOf('#') !== -1;
+  });
+  var sections = navAnchors.map(function (a) {
+    var id = a.getAttribute('href').split('#')[1];
+    return document.getElementById(id);
+  }).filter(Boolean);
+
+  if (sections.length && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var id = entry.target.id;
+        navAnchors.forEach(function (a) {
+          var matches = a.getAttribute('href').split('#')[1] === id;
+          a.classList.toggle('active', matches);
+        });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(function (s) { io.observe(s); });
+  }
+
   /* ── Escape key closes all modals ────────────────────────── */
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;

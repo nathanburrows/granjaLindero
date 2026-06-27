@@ -16,31 +16,27 @@ function gl_rows($key, $post_id = false) {
 }
 
 // ── First-run page setup ───────────────────────────────────
-add_action('after_switch_theme', 'gl_setup_pages');
+add_action('init', 'gl_setup_pages');
 function gl_setup_pages() {
-    $pages = [
-        'home'        => ['title' => 'Home',        'template' => ''],
-        'faq'         => ['title' => 'FAQ',          'template' => 'page-faq.php'],
-        'voluntarios' => ['title' => 'Voluntarios',  'template' => 'page-voluntarios.php'],
+    if (get_option('gl_pages_v2_created')) return;
+
+    $to_create = [
+        ['title'=>'Home',        'slug'=>'granja-home',  'template'=>''],
+        ['title'=>'FAQ',         'slug'=>'faq',          'template'=>'page-faq.php'],
+        ['title'=>'Voluntarios', 'slug'=>'voluntarios',  'template'=>'page-voluntarios.php'],
     ];
 
     $home_id = 0;
-    foreach ($pages as $slug => $cfg) {
-        $existing = get_page_by_path($slug);
+    foreach ($to_create as $cfg) {
+        $existing = get_posts(['post_type'=>'page','post_status'=>'publish','name'=>$cfg['slug'],'posts_per_page'=>1]);
         if ($existing) {
-            if ($slug === 'home') $home_id = $existing->ID;
+            if ($cfg['slug'] === 'granja-home') $home_id = $existing[0]->ID;
             continue;
         }
-        $id = wp_insert_post([
-            'post_title'   => $cfg['title'],
-            'post_name'    => $slug,
-            'post_status'  => 'publish',
-            'post_type'    => 'page',
-            'post_content' => '',
-        ]);
+        $id = wp_insert_post(['post_title'=>$cfg['title'],'post_name'=>$cfg['slug'],'post_status'=>'publish','post_type'=>'page','post_content'=>'']);
         if (!is_wp_error($id)) {
             if ($cfg['template']) update_post_meta($id, '_wp_page_template', $cfg['template']);
-            if ($slug === 'home') $home_id = $id;
+            if ($cfg['slug'] === 'granja-home') $home_id = $id;
         }
     }
 
@@ -48,6 +44,8 @@ function gl_setup_pages() {
         update_option('page_on_front', $home_id);
         update_option('show_on_front', 'page');
     }
+
+    update_option('gl_pages_v2_created', true);
 }
 
 // ── Theme setup ────────────────────────────────────────────
